@@ -1,6 +1,6 @@
 :root {
     /* Colors */
-    --color-primary: #2E86C1; /* Blue */
+    --color-primary: #495675; /* Blue */
     --color-secondary: #FFCB3D; /* Yellow */
     --color-neutral: #FFFFFF; /* White */
     --color-toggle-inactive: #A9D6E5; /* Light Blue */
@@ -12,7 +12,7 @@
     /* Headings */
     --font-size-heading: 32px;
     --font-size-subheading: 24px;
-    --font-weight-heading: bold;
+    --font-weight-heading: 900;
   
     /* Section Titles and Labels */
     --font-size-section-title: 24px;
@@ -45,4 +45,9 @@
     --spacing-xxxl: 64px;
     --spacing-xxxxl: 96px;
   }
-  
+.homeScreen__title h1{
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-heading);
+    font-weight: var(--font-weight-heading);
+    color: var(--color-primary);
+}  
