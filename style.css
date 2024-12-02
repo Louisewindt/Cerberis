@@ -1,52 +1,67 @@
 :root {
-    /* Colors */
-    --color-primary: #495675; /* Blue */
-    --color-secondary: #FFCB3D; /* Yellow */
-    --color-neutral: #FFFFFF; /* White */
-    --color-toggle-inactive: #A9D6E5; /* Light Blue */
-    --color-inactive: #F3F3F3; /* Gray */
-  
-    /* Typography (Montserrat) */
-    --font-family-primary: 'Montserrat', sans-serif;
-  
-    /* Headings */
-    --font-size-heading: 32px;
-    --font-size-subheading: 24px;
-    --font-weight-heading: 900;
-  
-    /* Section Titles and Labels */
-    --font-size-section-title: 24px;
-    --font-size-section-label: 16px;
-    --font-size-section-label-small: 12px;
-    --font-weight-section-label-bold: bold;
-    --font-weight-section-label-semi-bold: 600;
-  
-    /* Temperature Values */
-    --font-size-temperature-value-big: 64px;
-    --font-size-temperature-indicator: 32px;
-    --font-size-temperature-value-small: 16px;
-  
-    /* Room Labels */
-    --font-size-room-label: 16px;
-    --font-size-room-label-xsmall: 10px;
-  
-    /* Glassmorphism */
-    --gradient-glass: linear-gradient(90deg, rgba(255, 255, 255, 0.04), rgba(110, 110, 110, 0.15));
-    --glass-border-radius: 16px; /* Adjust as needed */
-  
-    /* Spacing */
-    --spacing-xxs: 4px;
-    --spacing-xs: 8px;
-    --spacing-s: 12px;
-    --spacing-m: 16px;
-    --spacing-l: 24px;
-    --spacing-xl: 32px;
-    --spacing-xxl: 48px;
-    --spacing-xxxl: 64px;
-    --spacing-xxxxl: 96px;
+  /* Font Weights */
+  --font-weight-title-black-900: 900;
+  --font-weight-bold-700: 700;
+  --font-weight-medium-500: 500;
+  --font-weight-regular-400: 400;
 
-    /* boxshadow */
+  /* Typography */
+  --font-family-primary: 'Montserrat', sans-serif;
+
+  /* Spacing */
+  --spacing-xxs: 4px;
+  --spacing-xs: 8px;
+  --spacing-s: 12px;
+  --spacing-m: 16px;
+  --spacing-l: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
+  --spacing-xxxl: 64px;
+  --spacing-xxxxl: 96px;
+
+  /* Colors */
+  --color-primary: #495675;
+  --color-secondary: #FFCB3D;
+  --color-neutral: #FFFFFF;
+  --color-glass-border: rgba(255, 255, 255, 0.55);
+
+  /* Glassmorphism */
+  --glass-background: linear-gradient(90deg, rgba(255, 255, 255, 0.04), rgba(110, 110, 110, 0.15));
+  --glass-border-radius: 16px;
+  --glass-backdrop-blur: blur(17.5px);
+
+    /* Shadows */
+    --box-shadow-toggle: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25) inset;
     --shadow-default: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+  h1{
+    font-family: var(--font-family-primary);
+    font-size: 32px;
+    font-weight: var(--font-weight-title-black-900);
+  }
+  h2 {
+    font-family: var(--font-family-primary);
+    font-size: 24px;
+  }
+  h3 {
+    font-family: var(--font-family-primary);
+    font-size: 16px;
+  }
+}
+  body {
+    margin: 0;
+    padding: var(--spacing-xs);
+    font-family: sans-serif;
+    background: url('images/Background.png') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh; /* Ensure it covers the entire viewport */
+    overflow-y: scroll; /* Allow scrolling */
+
+  }
+  .card{
+    color: var(--glass-background);
+    border-radius: var(--glass-border-radius);
+    backdrop-filter: var(--glass-backdrop-blur);
   }
 
   .header {
@@ -55,10 +70,7 @@
     align-items: center; /* Aligns items vertically */
   }
   
-  .homeScreen__title h1 {
-    font-family: var(--font-family-primary);
-    font-size: var(--font-size-heading);
-    font-weight: var(--font-weight-heading);
+  .homeScreen__title {
     color: var(--color-primary);
   }
   
@@ -84,7 +96,7 @@
   
   .weather__temperature {
     font-family: var(--font-family-primary);
-    font-size: 24px;
+    font-size: var(--font-size-subheading);
     font-weight: var(--font-weight-heading);
     color: var(--color-primary);
     line-height: normal;
@@ -94,4 +106,100 @@
     width: 32px;
     height: 32px;
   }
+
+  .card--savings {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-m);
+    border-radius: var(--border-radius-savings);
+    border: var(--glass-border-radius);
+    background: var(--gradient-glass);
+    backdrop-filter: var(--blur-savings);
+    text-align: center;
+    border: 2px solid var(--color-border);
+    box-shadow: var(--shadow-default);
+    border-radius: 16px;
+    backdrop-filter: blur(17.5px);
+  }
+
+  .savings__text {
+    font-weight: var( --font-weight-bold-700);
+    line-height: var(--line-height-savings);
+    color: var(--color-primary);
+    margin: 0;
+    padding-right: var(--spacing-xxs);
+  }
+
+  .savings__amount {
+    font-weight: var( --font-weight-bold-700);
+    color: var(--color-secondary);
+    padding-right: var(--spacing-xxs);
+    margin: 0; /* Reset default margin */
+    
+  }
   
+  /* Wrapper for toggles */
+.card--toggles {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-m);
+}
+
+/* Individual toggle section */
+.toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 154px;
+  height: 84px;
+  padding: var(--spacing-xs) var(--spacing-m);
+  border-radius: 16px;
+  border: 2px solid var(--color-glass-border);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  text-align: center;
+}
+
+/* Labels */
+.toggle__label {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-label);
+  font-weight: var(--font-weight-label);
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.toggle__label--info {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-info);
+  font-weight: var(--font-weight-info);
+  color: var(--color-primary);
+  margin: 0;
+}
+
+/* Toggle switch */
+.toggle__switch {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 108px;
+  height: 36px;
+  border-radius: 100px;
+  background: var(--color-white);
+  box-shadow: var(--box-shadow-toggle);
+  padding: var(--spacing-xxs);
+}
+
+/* Icon around toggle */
+.toggle__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 37px;
+  background: var(--color-secondary);
+}
