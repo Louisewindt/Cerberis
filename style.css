@@ -331,10 +331,15 @@
   text-align: center;
 }
 
-.card--temperatur{
-  position: absolute;
-  }
 
+/* themometer */
+
+.card--temperatur {
+
+  place-items: center;
+  width: 100%;         
+  
+  }
 
 #card--temperatur-slider {
   width: 200px;
@@ -342,10 +347,6 @@
   }
 
 .card--temperatur-inside {
-  position: absolute; 
-  top: 50%; 
-  left: 70%;
-  transform: translate(-50%, -50%); 
   font-size: 2rem;
   font-weight: bold;
   color: #201c29;
@@ -376,16 +377,17 @@
 
 /* change color on active slider */
 .rs-range-color {
-  background-color: #FFCB3D;
-}
+  background-color:  #FFCB3D !important;
+  border: none !important;
+} 
 
 /* change color on background color on slider */
 .rs-path-color {
-  background-color: #495675;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+  background-color: #495675 !important;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset ;
 }
 
-/ removes border om thermometer */
+/* removes border om thermometer */
 .rs-border{
-  border: none;
+  border: none !important;
 }
