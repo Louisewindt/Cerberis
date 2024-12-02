@@ -1,0 +1,48 @@
+:root {
+    /* Colors */
+    --color-primary: #2E86C1; /* Blue */
+    --color-secondary: #FFCB3D; /* Yellow */
+    --color-neutral: #FFFFFF; /* White */
+    --color-toggle-inactive: #A9D6E5; /* Light Blue */
+    --color-inactive: #BDBDBD; /* Gray */
+  
+    /* Typography (Montserrat) */
+    --font-family-primary: 'Montserrat', sans-serif;
+  
+    /* Headings */
+    --font-size-heading: 32px;
+    --font-size-subheading: 24px;
+    --font-weight-heading: bold;
+  
+    /* Section Titles and Labels */
+    --font-size-section-title: 24px;
+    --font-size-section-label: 16px;
+    --font-size-section-label-small: 12px;
+    --font-weight-section-label-bold: bold;
+    --font-weight-section-label-semi-bold: 600;
+  
+    /* Temperature Values */
+    --font-size-temperature-value-big: 64px;
+    --font-size-temperature-indicator: 32px;
+    --font-size-temperature-value-small: 16px;
+  
+    /* Room Labels */
+    --font-size-room-label: 16px;
+    --font-size-room-label-xsmall: 10px;
+  
+    /* Glassmorphism */
+    --gradient-glass: linear-gradient(90deg, rgba(255, 255, 255, 0.04), rgba(110, 110, 110, 0.15));
+    --glass-border-radius: 16px; /* Adjust as needed */
+  
+    /* Spacing */
+    --spacing-xxs: 4px;
+    --spacing-xs: 8px;
+    --spacing-s: 12px;
+    --spacing-m: 16px;
+    --spacing-l: 24px;
+    --spacing-xl: 32px;
+    --spacing-xxl: 48px;
+    --spacing-xxxl: 64px;
+    --spacing-xxxxl: 96px;
+  }
+  
