@@ -338,11 +338,15 @@
 /* themometer */
 
 .card--temperatur {
-
-  place-items: center;
-  width: 100%;         
-  
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Ensure content stacks neatly */
+  position: relative; /* Prepares for draggable updates */
+}
+.card--temperaturSection{
+  padding-top: var(--spacing-m);
+}
 
 #card--temperatur-slider {
   width: 200px;
@@ -395,18 +399,53 @@
   border: none !important;
 }
 
-.rooms__addButton {
+.room-item {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: var(--spacing-xs); /* Space between icon and text */
-  background-color: var(--color-primary); /* Ensure background is visible */
-  color: var(--color-neutral);
-  padding: var(--spacing-s);
-  border-radius: var(--glass-border-radius); /* Add border radius for styling */
-  box-shadow: var(--shadow-default); /* Apply shadow for visibility */
-  cursor: pointer;
-  z-index: 10; /* Ensure it's on top */
-  position: relative; /* Position the button relative to other elements */
-  width: fit-content; /* Make it fit its content */
+  justify-content: space-between; /* Push left and right content apart */
+  align-items: center; /* Vertically center items */
+  padding: var(--spacing-xxs) var(--spacing-xs);
+  gap: var(--spacing-s); /* Space between internal items */
+  align-self: stretch; /* Make the item fill the width of the container */
+  background: rgba(255, 255, 255, 0.1); /* Optional: Add light background for clarity */
+  border-radius: 16px;
+}
+
+/* Left Section: Icon + Name */
+.room-item__left {
+  display: flex;
+  align-items: center; /* Center-align the items vertically */
+  gap: var(--spacing-xs); /* Space between icon and name */
+}
+
+/* Right Section: Temperature + Icons */
+.room-item__right {
+  display: flex;
+  align-items: center; /* Center-align the items vertically */
+  gap: var(--spacing-xs); /* Space between temperature and arrow/lock */
+}
+
+.room-icon {
+  width: 24px; /* Adjust size for icons */
+  height: 24px; /* Maintain aspect ratio */
+}
+
+.room-item__name {
+  font-family: var(--font-family-primary);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.room-item__temperature {
+  font-family: var(--font-family-primary);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.room-item__icon {
+  font-size: 18px; /* Adjust size for icons */
+  color: var(--color-primary);
 }
