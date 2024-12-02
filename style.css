@@ -50,7 +50,7 @@
 }
   body {
     margin: 0;
-    padding: var(--spacing-xs);
+    padding:0;
     font-family: sans-serif;
     background: url('images/Background.png') no-repeat center center fixed;
     background-size: cover;
@@ -62,12 +62,14 @@
     color: var(--glass-background);
     border-radius: var(--glass-border-radius);
     backdrop-filter: var(--glass-backdrop-blur);
+    margin: var(--spacing-s);
   }
 
   .header {
     display: flex;
     justify-content: space-between; /* Spreads items to edges */
     align-items: center; /* Aligns items vertically */
+    margin: var(--spacing-s);
   }
   
   .homeScreen__title {
@@ -122,6 +124,7 @@
     box-shadow: var(--shadow-default);
     border-radius: 16px;
     backdrop-filter: blur(17.5px);
+    
   }
 
   .savings__text {
@@ -202,4 +205,192 @@
   height: 32px;
   border-radius: 37px;
   background: var(--color-secondary);
+}
+
+/* Energy Sources Card */
+.card--energy-sources {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-m);
+}
+
+/* Title */
+.card--energy-sources {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-s);
+  padding: var(--spacing-xs) var(--spacing-s);
+  font-weight: var(--font-weight-title-black-900);
+  color: var(--color-primary);
+  text-align: center;
+}
+
+.energy-sources__icon{
+  height: 48px;
+  width: auto;
+}
+/* Icons + Text Section */
+.energy-sources__icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-xxl);
+}
+
+/* Each Icon + Text Wrapper */
+.energy-sources__heater {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xs);
+  text-align: center;
+  color: var(--color-primary);
+}
+
+/* Circle Wrapper */
+.energy-sources__circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 64px; /* Circle width */
+  height: 64px; /* Circle height */
+  border-radius: 50%;
+  background-color: var(--color-neutral);
+  border: 2px solid var(--color-primary);
+  box-shadow: var(--shadow-default);
+  transition: transform 0.3s, background-color 0.3s, border-color 0.3s;
+  cursor: pointer;
+}
+
+/* Active State */
+.energy-sources__circle--active {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  transform: scale(1.1); /* Slightly enlarge the active circle */
+}
+
+/* Icons Inside Circles */
+.energy-sources__icon {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.energy-sources__icon--active{
+  color: var(--color-secondary);
+}
+
+/* Individual Icon + Text */
+.energy-sources__heaterInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xxs);
+  width: var(--spacing-xxxxl);
+  color: var(--color-primary);
+}
+
+/* Separator Line */
+.energy-sources__separator {
+  width: 90%;
+  height: 2px;
+  background-color: var(--color-primary);
+}
+
+/* "Dagens Data" Section */
+.energy-sources__data-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xxs);
+  align-self: stretch;
+}
+
+/* Subtitle */
+.energy-sources__subtitle {
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-regular-400);
+  color: var(--color-primary);
+  text-align: center;
+}
+
+/* Data (Brugt + Sparet) */
+.energy-sources__data {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Stretch to card width */
+  gap: var(--spacing-m);
+}
+
+.energy-sources__data-item {
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-bold-700);
+  color: var(--color-primary);
+  text-align: center;
+}
+
+.card--temperatur{
+  position: absolute;
+  width: 400px;
+  height: 400px; 
+  }
+
+
+#card--temperatur-slider {
+  width: 200px;
+  height: 200px;
+  top: 36%;
+  left: 32%;
+  }
+
+.card--temperatur-inside{
+  padding: 10px;
+  }
+
+.card--temperatur-inside span {
+  z-index: 3;
+  position: relative;
+  left: 65%;
+  font-size: 2rem;
+  color: #201c29;
+}
+
+
+/* Change font type in thermometer */
+.rs-tooltip.edit,.rs-tooltip .rs-input {
+  font-size: 2rem; 
+  font-weight: bold; 
+  border: none;
+}
+
+/* Remove borderbox around Temperature */
+#card--temperatur-slider:hover .rs-tooltip, .rs-tooltip:focus, .rs-tooltip-text:focus {
+  transform: scale(1.1);
+  transition: .1s;
+  border: none;
+}
+
+
+/* Change color on dragable point */
+#card--temperatur-slider .rs-handle {
+  background-color:white;
+  filter: drop-shadow(3px -1px 2px rgba(0, 0, 0, 0.27));
+}
+
+/* Change color on active slider */
+.rs-range-color {
+  background-color: #FFCB3D;
+}
+
+/* Change color on background on slider */
+.rs-path-color {
+  background-color: #495675;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
+/* Removing border on the slider */
+.rs-border{
+  border: none;
 }

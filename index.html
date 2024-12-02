@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700;900&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/roundSlider/1.3.2/roundslider.min.css" rel="stylesheet" />
 </head>
 <body>
 
@@ -60,28 +61,47 @@
 
 <!-- Energy Sources Section -->
 <section class="card card--energy-sources">
-    <h2 class="energy-sources__title">Varmekilder</h2>
-    <section class="energy-sources__icons">
-        <span class="energy-sources__icon energy-sources__icon--active">🔥</span>
-        <span class="energy-sources__icon">()</span>
+  <!-- Title -->
+  <h2>Varmekilder</h2>
+
+<!-- Icons + Text -->
+<section class="energy-sources__icons">
+  <!-- First Icon -->
+  <section class="energy-sources__heater">
+    <section class="energy-sources__circle energy-sources__circle--active">
+      <img src="images/icon_wood-pellet-stove.png" alt="Træpillefyr Icon" class="energy-sources__icon">
     </section>
-    <section class="energy-sources__data">
-        <h3 class="energy-sources__label">Træpillefyr</h3>
-        <h3 class="energy-sources__label">Fjernvarme</h3>
+    <h3>Træpillefyr</h3>
+  </section>
+
+  <!-- Second Icon -->
+  <section class="energy-sources__heater">
+    <section class="energy-sources__circle">
+      <img src="images/icon_district-heating.png" alt="Fjernvarme Icon" class="energy-sources__icon">
     </section>
-    <section class="energy-sources__separator"></section>
+    <h3>Fjernvarme</h3>
+  </section>
+</section>
+
+  <!-- Separator Line -->
+  <section class="energy-sources__separator"></section>
+
+  <!-- "Dagens Data" Section -->
+  <section class="energy-sources__data-section">
     <h2 class="energy-sources__subtitle">Dagens Data</h2>
-    <h2 class="energy-sources__data">Brugt 21 kWh</h2>
-    <h2 class="energy-sources__data">Sparet 0,50 kr</h2>
-    <span class="energy-sources__dropdown-icon">⏷</span>
+    <section class="energy-sources__data">
+      <p class="energy-sources__data-item">Brugt: 21 kWh</p>
+      <p class="energy-sources__data-item">Sparet: 0,50 kr</p>
+    </section>
+  </section>
 </section>
 
 <!-- Temperature Control Section -->
-<section class="card card--temperature-control">
-    <h2 class="temperature-control__title">Ændre Temperaturen</h2>
-    <section class="temperature-control__thermostat">
-        <p class="temperature-control__value">22°</p>
-    </section>
+<section class="card--temperatur">
+  <section id="card--temperatur-slider" class="rslider"></section>
+    <section class="card--temperatur-inside"><span>°</span></section>
+</section>
+
 </section>
 
 <!-- Rooms Section -->
@@ -141,5 +161,11 @@
     </button>
 </nav>
 
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/roundSlider/1.3.2/roundslider.min.js"></script>
+
+    <script src="script.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/roundSlider/1.3.2/roundslider.min.css" rel="stylesheet" />
 </body>
 </html>
