@@ -3,10 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home Screen</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<!-- Home Title -->
+     <header class="homeScreen__title">
+        <h1>Hjem</h1>
+      </header>
+
+<!-- Weather Section -->
+  <section class="weather">
+    <span class="weather__temperature">6°</span>
+    <span class="weather__icon">☁️</span> <!-- Icon for weather -->
+  </section>
+
+<!-- Savings section -->
+  <section class="savings">
+    <p class="savings__text">Du har sparet</p>
+    <p class="savings__amount">32 kr</p>
+    <p class="savings__text">i år</p>
+  </section>
+
+<!-- Toggles -->
+    <section class="toggle">
+        <section class="toggle__item">
+          <p class="toggle__label">Tilstand</p>
+          <p class="toggle__label toggle__label--information">(Hjemme)</p>
+          <input type="checkbox" class="toggle__switch" id="homeToggle">
+        </section>
+        <section class="toggle__item">
+          <p class="toggle__label">Rediger</p>
+          <p class="toggle__label toggle__label--information">(Home)</p>
+          <input type="checkbox" class="toggle__switch" id="editToggle">
+        </section>
+      </section>
+
+<!-- Energy sources -->
+  <section class="energy-sources">
+    <h2 class="energy-sources__title SectionTitle">Varmekilder</h2>
+    <section class="energy-sources__icons">
+      <span class="energy-sources__icon energy-sources__icon--active">🔥</span>
+      <span class="energy-sources__icon">()</span> <!-- Icon for heatsources -->
+    </section>
+    <section class="energy-sources__data">
+      <p class="energy-sources__label">Træpillefyr</p>
+      <p class="energy-sources__label">Fjernvarme</p>
+    </section>
+    <section class="energy-sources__separator"></section>
+    <p class="energy-sources__subtitle">Dagens Data</p>
+    <p class="energy-sources__data">Brugt 21 kWh</p>
+    <p class="energy-sources__data">Sparet 0,50 kr</p>
+    <span class="energy-sources__dropdown-icon">⏷</span>
+  </section>
+  
+<!-- Temperature control -->
+    <section class="temperature-control">
+        <h2 class="temperature-control__title SectionTitle">Ændre Temperaturen</h2>
+        <section class="temperature-control__thermostat">
+          <p class="temperature-control__value">22°</p>
+        </section>
+      </section>
+
+<!-- Rooms -->
+  <section class="rooms">
+    <section class="room-item">
+      <span class="room-item__name">Køkken</span>
+      <span class="room-item__temperature">22°</span>
+      <span class="room-item__icon">➔</span> <!-- placeholder icon -->
+    </section>
+    <section class="room-item room-item--active">
+      <span class="room-item__name">Soveværelse</span>
+      <span class="room-item__temperature">22°</span>
+      <span class="room-item__icon">➔</span> <!-- placeholder icon -->
+    </section>
+    <section class="room-item room-item--active">
+        <span class="room-item__name">Stue</span>
+        <span class="room-item__temperature">22°</span>
+        <span class="room-item__icon">➔</span> <!-- placeholder icon -->
+      </section>
+    <section class="room-item">
+      <span class="room-item__name">Badeværelse</span>
+      <span class="room-item__temperature">26°</span>
+      <span class="room-item__icon">➔</span>
+      <span class="room-item__icon">🔒</span> <!-- placeholder icon -->
+    </section>
+  <!-- Add Room Button -->
+  <button class="rooms__addButton">
+    <span class="rooms__addButton-icon">➕</span> <!-- Placeholder icon -->
+    <span class="rooms__addButton-text">Tilføj rum</span>
+  </button>
+</section>
+  </section>
+
+    <!-- Energy chart -->
+    <section class="energy-chart">
+        <h2 class="energy-chart__title SectionTitle">Dagens energiforbrug</h2>
+        <section class="energy-chart__bar">
+          <!-- Chart bars -->
+          <span class="energy-chart__bar-item" style="height: 50%;">Man</span>
+          <span class="energy-chart__bar-item" style="height: 40%;">Tir</span>
+          <span class="energy-chart__bar-item" style="height: 30%;">Ons</span>
+          <span class="energy-chart__bar-item" style="height: 70%;">Tor</span>
+          <span class="energy-chart__bar-item" style="height: 90%;">Fre</span>
+          <span class="energy-chart__bar-item" style="height: 20%;">Lør</span>
+          <span class="energy-chart__bar-item" style="height: 10%;">Søn</span>
+        </section>
+      </section>
     
+      <!-- Bottom navigation -->
+      <nav class="bottom-menu">
+        <button class="menu-item">
+          <span class="menu-icon automating-icon">🔧</span> <!-- placeholder icon -->
+        </button>
+        <button class="menu-item menu-item--active">
+          <span class="menu-icon home-icon">🏠</span> <!-- placeholder icon -->
+        </button>
+        <button class="menu-item">
+          <span class="menu-icon stats-icon">📊</span> <!-- placeholder icon -->
+        </button>
+      </nav>
 </body>
 </html>
