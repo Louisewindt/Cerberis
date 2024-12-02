@@ -24,6 +24,7 @@
   --color-secondary: #FFCB3D;
   --color-neutral: #FFFFFF;
   --color-glass-border: rgba(255, 255, 255, 0.55);
+  --color-inactive: #BDBDBD;
 
   /* Glassmorphism */
   --glass-background: linear-gradient(90deg, rgba(255, 255, 255, 0.04), rgba(110, 110, 110, 0.15));
@@ -256,8 +257,7 @@
   width: 64px; /* Circle width */
   height: 64px; /* Circle height */
   border-radius: 50%;
-  background-color: var(--color-neutral);
-  border: 2px solid var(--color-primary);
+  background-color: var(--c);
   box-shadow: var(--shadow-default);
   transition: transform 0.3s, background-color 0.3s, border-color 0.3s;
   cursor: pointer;
@@ -267,7 +267,10 @@
 .energy-sources__circle--active {
   background-color: var(--color-secondary);
   border-color: var(--color-secondary);
-  transform: scale(1.1); /* Slightly enlarge the active circle */
+}
+.energy-sources__circle--inactive {
+  background-color: var(--color-inactive);
+  
 }
 
 /* Icons Inside Circles */
@@ -390,4 +393,20 @@
 /* removes border om thermometer */
 .rs-border{
   border: none !important;
+}
+
+.rooms__addButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-xs); /* Space between icon and text */
+  background-color: var(--color-primary); /* Ensure background is visible */
+  color: var(--color-neutral);
+  padding: var(--spacing-s);
+  border-radius: var(--glass-border-radius); /* Add border radius for styling */
+  box-shadow: var(--shadow-default); /* Apply shadow for visibility */
+  cursor: pointer;
+  z-index: 10; /* Ensure it's on top */
+  position: relative; /* Position the button relative to other elements */
+  width: fit-content; /* Make it fit its content */
 }
