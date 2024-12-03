@@ -169,19 +169,45 @@
   </button>
 </section>
 
-<!-- Energy Chart Section -->
 <section class="card card--energy-chart">
-    <h2 class="energy-chart__title">Dagens energiforbrug</h2>
-    <section class="energy-chart__bar">
-        <span class="energy-chart__bar-item" style="height: 50%;">Man</span>
-        <span class="energy-chart__bar-item" style="height: 40%;">Tir</span>
-        <span class="energy-chart__bar-item" style="height: 30%;">Ons</span>
-        <span class="energy-chart__bar-item" style="height: 70%;">Tor</span>
-        <span class="energy-chart__bar-item" style="height: 90%;">Fre</span>
-        <span class="energy-chart__bar-item" style="height: 20%;">Lør</span>
-        <span class="energy-chart__bar-item" style="height: 10%;">Søn</span>
+  <h2 class="energy-chart__title">Dagens energiforbrug</h2>
+
+  <!-- Container for Indicators and Bars -->
+  <section class="energy-chart__container">
+    <!-- Left Indicators -->
+    <section class="energy-chart__indicators">
+      <span>50</span>
+      <span>40</span>
+      <span>30</span>
+      <span>20</span>
+      <span>10</span>
     </section>
+
+    <!-- Bars -->
+    <section class="energy-chart__bars">
+      <section class="energy-chart__bar" style="--bar-height: 50%;"></section>
+      <section class="energy-chart__bar" style="--bar-height: 40%;"></section>
+      <section class="energy-chart__bar" style="--bar-height: 30%;"></section>
+      <section class="energy-chart__bar" style="--bar-height: 70%;"></section>
+      <section class="energy-chart__bar" style="--bar-height: 90%;"></section>
+      <section class="energy-chart__bar" style="--bar-height: 20%;"></section>
+      <section class="energy-chart__bar" style="--bar-height: 10%;"></section>
+    </section>
+  </section>
+
+  <!-- Bottom Labels -->
+  <section class="energy-chart__labels">
+    <span>Man</span>
+    <span>Tir</span>
+    <span>Ons</span>
+    <span>Tor</span>
+    <span>Fre</span>
+    <span>Lør</span>
+    <span>Søn</span>
+  </section>
 </section>
+
+
 
 <!-- Bottom Navigation -->
 <nav class="bottom-menu">
