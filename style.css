@@ -58,7 +58,7 @@
     padding:0;
     background: url('images/Background.png') no-repeat center center fixed;
     background-size: cover;
-    overflow-y: scroll; /* Allow scrolling */
+    overflow-y: scroll; /* That scroll effect */
   }
   .card{
     color: var(--glass-background);
@@ -69,8 +69,8 @@
 
   .header {
     display: flex;
-    justify-content: space-between; /* Spreads items to edges */
-    align-items: center; /* Aligns items vertically */
+    justify-content: space-between; 
+    align-items: center; 
     margin: var(--spacing-s);
   }
   
@@ -141,7 +141,7 @@
     font-weight: var( --font-weight-bold-700);
     color: var(--color-secondary);
     padding-right: var(--spacing-xxs);
-    margin: 0; /* Reset default margin */
+    margin: 0; 
     
   }
   
@@ -255,8 +255,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 64px; /* Circle width */
-  height: 64px; /* Circle height */
+  width: 64px;
+  height: 64px; 
   border-radius: 50%;
   background-color: var(--c);
   box-shadow: var(--shadow-default);
@@ -324,7 +324,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%; /* Stretch to card width */
+  width: 100%;
   gap: var(--spacing-m);
 }
 
@@ -342,8 +342,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column; /* Ensure content stacks neatly */
-  position: relative; /* Prepares for draggable updates */
+  flex-direction: column; 
+  position: relative; 
 }
 .card--temperaturesectionTitle{
   color: var(--color-primary);
@@ -407,40 +407,40 @@
 
 .room-item {
   display: flex;
-  justify-content: space-between; /* Push left and right content apart */
-  align-items: center; /* Vertically center items */
+  justify-content: space-between; 
+  align-items: center; 
   padding: var(--spacing-m) var(--spacing-xs);
-  gap: var(--spacing-s); /* Space between internal items */
-  align-self: stretch; /* Make the item fill the width of the container */
-  background: rgba(255, 255, 255, 0.1); /* Optional: Add light background for clarity */
+  gap: var(--spacing-s);
+  align-self: stretch; 
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 16px;
 }
 .card--rooms {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centers child items horizontally */
-  justify-content: center; /* Centers child items vertically */
-  gap: var(--spacing-m); /* Space between room items */
+  align-items: center; 
+  justify-content: center; 
+  gap: var(--spacing-m); 
   padding: var(--spacing-m);
 }
 
 /* Left Section: Icon + Name */
 .room-item__left {
   display: flex;
-  align-items: center; /* Center-align the items vertically */
-  gap: var(--spacing-xs); /* Space between icon and name */
+  align-items: center; 
+  gap: var(--spacing-xs); 
 }
 
 /* Right Section: Temperature + Icons */
 .room-item__right {
   display: flex;
-  align-items: center; /* Center-align the items vertically */
-  gap: var(--spacing-xs); /* Space between temperature and arrow/lock */
+  align-items: center; 
+  gap: var(--spacing-xs); 
 }
 
 .room-icon {
-  width: 24px; /* Adjust size for icons */
-  height: 24px; /* Maintain aspect ratio */
+  width: 24px; 
+  height: 24px; 
 }
 
 .room-item__name {
@@ -456,25 +456,25 @@
 }
 
 .room-item__icon {
-  font-size: 18px; /* Adjust size for icons */
+  font-size: 18px;
   color: var(--color-primary);
 }
 .rooms__addButton {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: var(--spacing-s); /* Gap between the icon and text */
+  gap: var(--spacing-s); 
   height: 40px;
-  padding: var(--spacing-s) var(--spacing-xl); /* Adjust padding */
+  padding: var(--spacing-s) var(--spacing-xl);
   border-radius: 100px;
-  background: var(--color-primary); /* Use primary color for the background */
-  box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.25); /* Add shadow for depth */
-  color: var(--color-neutral); /* White text color */
+  background: var(--color-primary); 
+  box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.25); 
+  color: var(--color-neutral); 
   font-family: var(--font-family-primary);
   font-size: 16px;
-  font-weight: var(--font-weight-title-black-900); /* Bold typography */
+  font-weight: var(--font-weight-title-black-900);
   line-height: normal;
-  border: none; /* Remove default button border */
+  border: none; 
 
 }
 
@@ -486,8 +486,8 @@
 
 /* Text inside the button */
 .rooms__addButton-text {
-  font-size: 16px; /* Match the font size of the text */
-  font-weight: var(--font-weight-title-black-900); /* Bold typography */
+  font-size: 16px; 
+  font-weight: var(--font-weight-title-black-900); 
 }
 
 .card--energy-chart {
@@ -510,9 +510,9 @@
 /* Container for Indicators and Bars */
 .energy-chart__container {
   display: flex;
-  align-items: flex-end; /* Align indicators and bars at the bottom */
-  gap: var(--spacing-s); /* Space between indicators and bars */
-  width: 100%; /* Ensure the container spans the card width */
+  align-items: flex-end; 
+  gap: var(--spacing-s); 
+  width: 100%; 
 }
 
 /* Left Indicators */
@@ -533,8 +533,8 @@
   justify-content: center;
   align-items: flex-end;
   gap: var(--spacing-s);
-  flex-grow: 1; /* Allow bars to take up remaining space */
-  height: 240px; /* Adjust as needed */
+  flex-grow: 1; 
+  height: 240px; 
 }
 
 .energy-chart__bar {
@@ -579,9 +579,8 @@
   align-items: center;
   background-color: var(--color-primary);
   padding: var(--spacing-s);
-  height: 60px; /* Increased height to accommodate animation */
+  height: 60px;
   z-index: 10;
-  overflow: hidden; /* Hide bubble overflow */
 }
 
 /* Menu Item */
@@ -595,13 +594,13 @@
 
 /* Menu Item Active State */
 .menu-item.active {
-  transform: translateY(-5px) scale(2); /* Moves icon up and scales it */
+  transform: translateY(-5px) scale(2);
   border: 2px solid var(--color-primary);
-  border-radius: 50%; /* Make the border round */
+  border-radius: 50%; 
 }
 
 .menu-item.active .menu-icon {
-  filter: drop-shadow(0px 0px 8px var(--color-neutral)); /* Glowing effect */
+  filter: drop-shadow(0px 0px 8px var(--color-neutral));
 }
 
 /* Menu Icon */
@@ -658,5 +657,4 @@
 
 
 .content {
-  padding-bottom:150px; /* Equal to the height of the bottom menu (45px) + some extra space */
-}
+  padding-bottom:150px;
