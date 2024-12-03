@@ -369,8 +369,10 @@
 
 /* change fonttype for temperatur in thermometer */
 .rs-tooltip.edit,.rs-tooltip .rs-input {
-  font-size: 2rem; 
-  font-weight: bold; 
+  font-size: 64px; 
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-title-black-900); 
+  color: var(--color-primary);
   border: none;
 }
 
@@ -612,7 +614,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px;
+  padding: var(--spacing-m);
   background-color: var(--color-primary);
   box-shadow: var(--menu-shadow);
   border-top-left-radius: 30px;
@@ -631,8 +633,35 @@
 }
 
 .menu-item.sc-current {
-  transform: translateY(-12px) scale(1.5);
+  transform: translateY(-20px) scale(1.7);
   z-index: 3;
+  border: #495675;
+}
+.menu-item.sc-current::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 35px; /* Adjust size for the glow */
+  height: 35px; /* Adjust size for the glow */
+  border-radius: 100%;
+  border-color: var(--color-primary);
+  z-index: -1; /* Places it behind the menu item */
+  box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.5); /* Smooth glow effect */
+}
+
+.menu-item.sc-current::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px; /* Adjust size for the border */
+  height: 50px; /* Adjust size for the border */
+  border: 10px solid var(--color-primary); /* Primary color border */
+  border-radius: 50%;
+  z-index: -2; /* Places it behind the menu item */
 }
 
 .menu-icon {
@@ -658,3 +687,4 @@
 
 .content {
   padding-bottom:150px;
+}
