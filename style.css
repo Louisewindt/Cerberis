@@ -344,6 +344,11 @@
   flex-direction: column; /* Ensure content stacks neatly */
   position: relative; /* Prepares for draggable updates */
 }
+.card--temperaturesectionTitle{
+  color: var(--color-primary);
+  display: flex;
+  justify-content: center;
+}
 .card--temperaturSection{
   padding-top: var(--spacing-m);
 }
@@ -403,11 +408,19 @@
   display: flex;
   justify-content: space-between; /* Push left and right content apart */
   align-items: center; /* Vertically center items */
-  padding: var(--spacing-xxs) var(--spacing-xs);
+  padding: var(--spacing-m) var(--spacing-xs);
   gap: var(--spacing-s); /* Space between internal items */
   align-self: stretch; /* Make the item fill the width of the container */
   background: rgba(255, 255, 255, 0.1); /* Optional: Add light background for clarity */
   border-radius: 16px;
+}
+.card--rooms {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers child items horizontally */
+  justify-content: center; /* Centers child items vertically */
+  gap: var(--spacing-m); /* Space between room items */
+  padding: var(--spacing-m);
 }
 
 /* Left Section: Icon + Name */
@@ -430,22 +443,48 @@
 }
 
 .room-item__name {
-  font-family: var(--font-family-primary);
-  font-size: 16px;
-  font-weight: 400;
   color: var(--color-primary);
   margin: 0;
+  font-weight: var(--font-weight-title-black-900);
 }
 
 .room-item__temperature {
-  font-family: var(--font-family-primary);
-  font-size: 16px;
-  font-weight: 400;
   color: var(--color-primary);
   margin: 0;
+  font-weight: var(--font-weight-title-black-900);
 }
 
 .room-item__icon {
   font-size: 18px; /* Adjust size for icons */
   color: var(--color-primary);
+}
+.rooms__addButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-s); /* Gap between the icon and text */
+  height: 40px;
+  padding: var(--spacing-s) var(--spacing-xl); /* Adjust padding */
+  border-radius: 100px;
+  background: var(--color-primary); /* Use primary color for the background */
+  box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.25); /* Add shadow for depth */
+  color: var(--color-neutral); /* White text color */
+  font-family: var(--font-family-primary);
+  font-size: 16px;
+  font-weight: var(--font-weight-title-black-900); /* Bold typography */
+  line-height: normal;
+  border: none; /* Remove default button border */
+
+}
+
+
+/* Icon inside the button */
+.Rooms__addButtonIcon {
+  height: 16px;
+}
+
+/* Text inside the button */
+.rooms__addButton-text {
+  font-size: 16px; /* Match the font size of the text */
+  font-weight: var(--font-weight-title-black-900); /* Bold typography */
 }
