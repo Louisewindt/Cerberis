@@ -55,13 +55,10 @@
 }
   body {
     margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    background: url('images/Background.png') no-repeat center center;
+    padding:0;
+    background: url('images/Background.png') no-repeat center center fixed;
     background-size: cover;
-    height: 100vh; /* Ensure it covers the entire viewport */
     overflow-y: scroll; /* Allow scrolling */
-    background-attachment: fixed;
   }
   .card{
     color: var(--glass-background);
@@ -573,18 +570,18 @@
 }
 /* Bottom Menu */
 .bottom-menu {
-  position: fixed; /* Keeps it stuck to the bottom */
-  bottom: 0; /* Position it at the very bottom */
+  position: fixed;
+  bottom: 0;
   left: 0;
   right: 0;
-  padding-bottom: 10px;
   display: flex;
-  justify-content: space-between; /* Evenly space the icons */
-  align-items: center; /* Center icons vertically */
-  background-color: var(--color-primary); /* Background color from root token */
-  padding: var(--spacing-s); /* Add padding around the menu */
-  height: 45px; /* Adjust as needed */
-  z-index: 10; /* Ensure it stays above other elements */
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-primary);
+  padding: var(--spacing-s);
+  height: 60px; /* Increased height to accommodate animation */
+  z-index: 10;
+  overflow: hidden; /* Hide bubble overflow */
 }
 
 /* Menu Item */
@@ -592,17 +589,73 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 48px; /* Icon width */
-  height: 48px; /* Icon height */ 
-  cursor: pointer; /* Makes the icons clickable */
+  width: 50px;
+  height: 50px;
 }
 
-/* Icons */
-.menu-icon {
-  width: 115px; /* Make the icon fill the item */
-  height: auto;
-  object-fit: contain; /* Keeps the aspect ratio */
+/* Menu Item Active State */
+.menu-item.active {
+  transform: translateY(-5px) scale(2); /* Moves icon up and scales it */
+  border: 2px solid var(--color-primary);
+  border-radius: 50%; /* Make the border round */
 }
+
+.menu-item.active .menu-icon {
+  filter: drop-shadow(0px 0px 8px var(--color-neutral)); /* Glowing effect */
+}
+
+/* Menu Icon */
+.bottom-menu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background-color: var(--color-primary);
+  box-shadow: var(--menu-shadow);
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  z-index: 10;
+  height: var(--menu-height);
+  
+}
+
+.menu-item {
+  flex: 1;
+  text-align: center;
+  cursor: pointer;
+  color: white;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.menu-item.sc-current {
+  transform: translateY(-12px) scale(1.5);
+  z-index: 3;
+}
+
+.menu-icon {
+  width: 50px;
+  height: 50px;
+}
+.menu-icon-small{
+  width: 75px;
+  height: auto;
+}
+.menu-indicator {
+  position: absolute;
+  bottom: calc(var(--menu-height) / 2 - var(--indicator-size) / 2);
+  width: var(--indicator-size);
+  height: var(--indicator-size);
+  background-color: #495675;
+  border-radius: 50%;
+  box-shadow: var(--menu-shadow);
+  z-index: 2;
+  transition: left 0.3s ease;
+}
+
 
 .content {
   padding-bottom:150px; /* Equal to the height of the bottom menu (45px) + some extra space */
