@@ -76,38 +76,49 @@ document.addEventListener("DOMContentLoaded", () => {
 // Get the toggle and all cards
 const editToggle = document.querySelector('#toggle-card-edit__checkbox');
 const draggableCards = document.querySelectorAll('.card');
+let draggedElement = null;
 
-// Toggle edit mode
+// Enable edit mode: icons and shake
 editToggle.addEventListener('change', () => {
   const isEditingEnabled = editToggle.checked;
 
   draggableCards.forEach((card) => {
+    const editIcon = card.querySelector('.card__edit-icon');
     if (isEditingEnabled) {
-      card.setAttribute('draggable', 'true');
-      card.classList.add('draggable', 'shaking'); // Add shaking and draggable behavior
+      card.classList.add('shaking'); // Enable shaking animation
+      editIcon.style.pointerEvents = 'auto'; // Allow interaction with icon
     } else {
-      card.removeAttribute('draggable');
-      card.classList.remove('draggable', 'shaking'); // Remove behaviors
+      card.classList.remove('shaking'); // Disable shaking animation
+      editIcon.style.pointerEvents = 'none'; // Disable interaction with icon
     }
   });
 });
 
-// Drag-and-Drop Events
-let draggedElement = null;
-
+// Add drag functionality
 draggableCards.forEach((card) => {
+  const editIcon = card.querySelector('.card__edit-icon');
+
+  // Start dragging when holding the icon (desktop and mobile)
+  editIcon.addEventListener('mousedown', (event) => startDragging(event, card));
+  editIcon.addEventListener('touchstart', (event) => startDragging(event, card));
+
+  // Stop dragging when releasing the icon
+  editIcon.addEventListener('mouseup', stopDragging);
+  editIcon.addEventListener('touchend', stopDragging);
+
+  // Drag-and-drop events for the card
   card.addEventListener('dragstart', (event) => {
     draggedElement = event.target;
-    event.target.classList.add('dragging');
+    event.target.classList.add('dragging'); // Visual feedback
   });
 
   card.addEventListener('dragend', (event) => {
     draggedElement = null;
-    event.target.classList.remove('dragging');
+    event.target.classList.remove('dragging'); // Remove feedback
   });
 
   card.addEventListener('dragover', (event) => {
-    event.preventDefault(); // Allow drop
+    event.preventDefault(); // Allow dropping
   });
 
   card.addEventListener('drop', (event) => {
@@ -122,3 +133,18 @@ draggableCards.forEach((card) => {
     }
   });
 });
+
+// Start dragging
+function startDragging(event, card) {
+  event.preventDefault(); // Prevent default behavior
+  card.setAttribute('draggable', 'true'); // Enable drag
+  draggedElement = card;
+}
+
+// Stop dragging
+function stopDragging() {
+  if (draggedElement) {
+    draggedElement.setAttribute('draggable', 'false'); // Disable drag
+    draggedElement = null;
+  }
+}
