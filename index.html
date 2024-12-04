@@ -15,15 +15,15 @@
 
   <section class="header">
     <!-- Home Title -->
-    <header class="homeScreen__title">
-        <h1>Hjem</h1>
+    <header class="header__title">
+        <h1 class="header__title-text">Hjem</h1>
     </header>
 
     <!-- Weather Section -->
-    <section class="weather">
-        <section class="weather__content">
-            <h2 class="weather__temperature">6°</h2>
-            <svg class="weather__icon" xmlns="http://www.w3.org/2000/svg" width="38" height="24" viewBox="0 0 38 24" fill="none">
+    <section class="header__weather">
+        <section class="header__weather-content">
+            <h2 class="header__weather-temperature">6°</h2>
+            <svg class="header__weather-icon" xmlns="http://www.w3.org/2000/svg" width="38" height="24" viewBox="0 0 38 24" fill="none">
                 <circle cx="18.5558" cy="10.881" r="10.881" fill="#ECC135" />
                 <path d="..." fill="#A8A8A8" stroke="white" />
                 <path d="..." fill="#A8A8A8" stroke="white" />
@@ -33,132 +33,132 @@
 </section>
 
 <!-- Savings Section -->
-<section class="card card--savings">
-    <h2 class="savings__text">Du har sparet</h2>
-    <h2 class="savings__amount">32 kr</h2>
-    <h2 class="savings__text">i år</h2>
+<section class="card savings-card">
+    <h2 class="savings-card__text">Du har sparet</h2>
+    <h2 class="savings-card__amount">32 kr</h2>
+    <h2 class="savings-card__text">i år</h2>
 </section>
 
 <!-- Toggles Section -->
-<section class="card card--toggles">
+<section class="card toggle-card">
     <!-- Toggle 1 -->
-    <section class="toggle">
-        <h3 class="toggle__label">Tilstand</h3>
-        <p class="toggle__label--info">(Hjemme)</p>
-        <section class="toggle__switch">
-            <section class="toggle__icon"></section>
+    <section class="toggle-card__toggle">
+        <h3 class="toggle-card__label">Tilstand</h3>
+        <p class="toggle-card__label-info">(Hjemme)</p>
+        <section class="toggle-card__switch">
+            <section class="toggle-card__icon"></section>
         </section>
     </section>
     <!-- Toggle 2 -->
-    <section class="toggle">
-        <h3 class="toggle__label">Rediger</h3>
-        <p class="toggle__label--info">(Home)</p>
-        <section class="toggle__switch">
-            <section class="toggle__icon"></section>
+    <section class="toggle-card__toggle">
+        <h3 class="toggle-card__label">Rediger</h3>
+        <p class="toggle-card__label-info">(Home)</p>
+        <section class="toggle-card__switch">
+            <section class="toggle-card__icon"></section>
         </section>
     </section>
 </section>
 
 <!-- Energy Sources Section -->
-<section class="card card--energy-sources">
+<section class="card energy-sources-card">
   <!-- Title -->
-  <h2>Varmekilder</h2>
+  <h2 class="energy-sources-card__title">Varmekilder</h2>
 
 <!-- Icons + Text -->
-<section class="energy-sources__icons">
+<section class="energy-sources-card__icons">
   <!-- First Icon -->
-  <section class="energy-sources__heater">
-    <section class="energy-sources__circle energy-sources__circle--active">
-      <img src="images/icon_wood-pellet-stove.png" alt="Træpillefyr Icon" class="energy-sources__icon">
+  <section class="energy-sources__left">
+    <section class="energy-sources-card__icon energy-sources-card__icon--active">
+      <img src="images/icon_wood-pellet-stove.png" alt="Træpillefyr Icon" class="energy-sources-card__image">
     </section>
     <h3>Træpillefyr</h3>
   </section>
 
   <!-- Second Icon -->
-  <section class="energy-sources__heater">
-    <section class="energy-sources__circle energy-sources__circle--inactive">
-      <img src="images/DistantHeating.svg" alt="Fjernvarme Icon" class="energy-sources__icon">
+  <section class="energy-sources__right">
+    <section class="energy-sources-card__icon energy-sources-card__icon--inactive">
+      <img src="images/DistantHeating.svg" alt="Fjernvarme Icon" class="energy-sources-card__image">
     </section>
     <h3>Fjernvarme</h3>
   </section>
 </section>
 
   <!-- Separator Line -->
-  <section class="energy-sources__separator"></section>
+  <section class="energy-sources-card__separator"></section>
 
   <!-- "Dagens Data" Section -->
-  <section class="energy-sources__data-section">
-    <h2 class="energy-sources__subtitle">Dagens Data</h2>
+  <section class="energy-sources-card__data">
+    <h2 class="energy-sources-card__subtitle">Dagens Data</h2>
     <section class="energy-sources__data">
       <p class="energy-sources__data-item">Brugt: 21 kWh</p>
       <p class="energy-sources__data-item">Sparet: 0,50 kr</p>
     </section>
   </section>
   <section>
-    <img src="images/dropdown.svg" alt="downdown arrow" class="energy-sources-dropdown">
+    <img src="images/dropdown.svg" alt="downdown arrow" class="energy-sources__data-dropdown">
   </section>
 </section>
 
 <!-- Temperature Control Section -->
- <section class="card card--temperaturSection">
-  <section class="card--temperaturesectionTitle">
+ <section class="card temperature-card">
+  <section class="temperature-card__title">
     <h2>Ændre Temperaturen</h2>
   </section>
-<section class="card--temperatur">
-  <section id="card--temperatur-slider" class="rslider"></section>
-  <span class="card--temperatur-inside">°</span>
+<section class="temperature-card__value">
+  <section id="card__temperatur-slider" class="rslider"></section>
+  <span class="card__temperatur-inside">°</span>
 </section>
 </section>
 
-<section class="card card--rooms">
-  <section class="room-item">
+<section class="card rooms-card">
+  <section class="rooms-card__room">
     <!-- Left Section -->
-    <section class="room-item__left">
-      <img src="images/kitchen_icon.svg" alt="icon for kitchen" class="room-icon">
-      <h3 class="room-item__name">Køkken</h3>
+    <section class="rooms-card__name-details">
+      <img src="images/kitchen_icon.svg" alt="icon for kitchen" class="rooms-card__icon">
+      <h3 class="rooms-card__name">Køkken</h3>
     </section>
 
     <!-- Right Section -->
-    <section class="room-item__right">
-      <h3 class="room-item__temperature">22°</h3>
-      <span class="room-item__icon">➔</span>
+    <section class="room-item__temperature-details">
+      <h3 class="rooms-card__temperature">22°</h3>
+      <span class="rooms-card-arrow__icon">➔</span>
     </section>
   </section>
 
-  <section class="room-item room-item--active">
-    <section class="room-item__left">
-      <img src="images/Bedroom_icon.svg" alt="icon for bedroom" class="room-icon">
-      <h3 class="room-item__name">Soveværelse</h3>
+  <section class="rooms-card__room room-item--active">
+    <section class="rooms-card__name-details">
+      <img src="images/Bedroom_icon.svg" alt="icon for bedroom" class="rooms-card__icon">
+      <h3 class="rooms-card__name">Soveværelse</h3>
     </section>
 
-    <section class="room-item__right">
-      <h3 class="room-item__temperature">22°</h3>
-      <span class="room-item__icon">➔</span>
-    </section>
-  </section>
-
-  <section class="room-item room-item--active">
-    <section class="room-item__left">
-      <img src="images/Livingroom_icon.svg" alt="icon for livingroom" class="room-icon">
-      <h3 class="room-item__name">Stue</h3>
-    </section>
-
-    <section class="room-item__right">
-      <h3 class="room-item__temperature">22°</h3>
-      <span class="room-item__icon">➔</span>
+    <section class="room-item__temperature-details">
+      <h3 class="rooms-card__temperature">22°</h3>
+      <span class="rooms-card-arrow__icon">➔</span>
     </section>
   </section>
 
-  <section class="room-item">
-    <section class="room-item__left">
-      <img src="images/bathroom_icon.svg" alt="icon for bathroom" class="room-icon">
-      <h3 class="room-item__name">Badeværelse</h3>
+  <section class="rooms-card__room room-item--active">
+    <section class="rooms-card__name-details">
+      <img src="images/Livingroom_icon.svg" alt="icon for livingroom" class="rooms-card__icon">
+      <h3 class="rooms-card__name">Stue</h3>
     </section>
 
-    <section class="room-item__right">
+    <section class="room-item__temperature-details">
+      <h3 class="rooms-card__temperature">22°</h3>
+      <span class="rooms-card-arrow__icon">➔</span>
+    </section>
+  </section>
+
+  <section class="rooms-card__room">
+    <section class="rooms-card__name-details">
+      <img src="images/bathroom_icon.svg" alt="icon for bathroom" class="rooms-card__icon">
+      <h3 class="rooms-card__name">Badeværelse</h3>
+    </section>
+
+    <section class="room-item__temperature-details">
       <img src="images/lock.svg" alt="icon for livingroom" class="room-Lockicon">
-      <h3 class="room-item__temperature">26°</h3>
-      <span class="room-item__icon">➔</span>
+      <h3 class="rooms-card__temperature">26°</h3>
+      <span class="rooms-card-arrow__icon">➔</span>
     </section>
   </section>
 

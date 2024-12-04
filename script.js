@@ -1,4 +1,4 @@
-$("#card--temperatur-slider").roundSlider({
+$("#card__temperatur-slider").roundSlider({
     radius: 100,
     circleShape: "full",    // Cirkulær form
     sliderType: "min-range",

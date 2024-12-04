@@ -63,6 +63,7 @@
   .card{
     color: var(--glass-background);
     border-radius: var(--glass-border-radius);
+    -webkit-backdrop-filter: var(--glass-backdrop-blur);
     backdrop-filter: var(--glass-backdrop-blur);
     margin: var(--spacing-s);
   }
@@ -74,11 +75,11 @@
     margin: var(--spacing-s);
   }
   
-  .homeScreen__title {
+  .header__title {
     color: var(--color-primary);
   }
   
-  .weather {
+  .header__weather {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -91,14 +92,14 @@
     padding: var(--spacing-xs) var(--spacing-xs) var(--spacing-xs) var(--spacing-s);
   }
   
-  .weather__content {
+  .header__weather-content {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: var(--spacing-xxs);
   }
   
-  .weather__temperature {
+  .header__weather-temperature {
     font-family: var(--font-family-primary);
     font-size: var(--font-size-subheading);
     font-weight: var(--font-weight-heading);
@@ -106,12 +107,12 @@
     line-height: normal;
   }
   
-  .weather__icon {
+  .header__weather-icon {
     width: 32px;
     height: 32px;
   }
 
-  .card--savings {
+  .savings-card {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -129,7 +130,7 @@
     
   }
 
-  .savings__text {
+  .savings-card__text {
     font-weight: var( --font-weight-bold-700);
     line-height: var(--line-height-savings);
     color: var(--color-primary);
@@ -137,7 +138,7 @@
     padding-right: var(--spacing-xxs);
   }
 
-  .savings__amount {
+  .savings-card__amount {
     font-weight: var( --font-weight-bold-700);
     color: var(--color-secondary);
     padding-right: var(--spacing-xxs);
@@ -146,14 +147,14 @@
   }
   
   /* Wrapper for toggles */
-.card--toggles {
+.toggle-card {
   display: flex;
   flex-direction: row;
   gap: var(--spacing-m);
 }
 
 /* Individual toggle section */
-.toggle {
+.toggle-card__toggle {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -169,7 +170,7 @@
 }
 
 /* Labels */
-.toggle__label {
+.toggle-card__label {
   font-family: var(--font-family-primary);
   font-size: var(--font-size-label);
   font-weight: var(--font-weight-label);
@@ -177,7 +178,7 @@
   margin: 0;
 }
 
-.toggle__label--info {
+.toggle-card__label-info {
   font-family: var(--font-family-primary);
   font-size: var(--font-size-info);
   font-weight: var(--font-weight-info);
@@ -186,7 +187,7 @@
 }
 
 /* Toggle switch */
-.toggle__switch {
+.toggle-card__switch {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -199,7 +200,7 @@
 }
 
 /* Icon around toggle */
-.toggle__icon {
+.toggle-card__icon {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -210,7 +211,7 @@
 }
 
 /* Energy Sources Card */
-.card--energy-sources {
+.energy-sources-card {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-m);
@@ -228,12 +229,12 @@
   text-align: center;
 }
 
-.energy-sources__icon{
+.energy-sources-card__image{
   height: 48px;
   width: auto;
 }
 /* Icons + Text Section */
-.energy-sources__icons {
+.energy-sources-card__icons {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -241,7 +242,7 @@
 }
 
 /* Each Icon + Text Wrapper */
-.energy-sources__heater {
+.energy-sources__left, .energy-sources__right {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -251,7 +252,7 @@
 }
 
 /* Circle Wrapper */
-.energy-sources__circle {
+.energy-sources-card__icon {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -265,11 +266,11 @@
 }
 
 /* Active State */
-.energy-sources__circle--active {
+.energy-sources-card__icon--active {
   background-color: var(--color-secondary);
   border-color: var(--color-secondary);
 }
-.energy-sources__circle--inactive {
+.energy-sources-card__icon--inactive {
   background-color: var(--color-inactive);
   
 }
@@ -296,14 +297,14 @@
 }
 
 /* Separator Line */
-.energy-sources__separator {
+.energy-sources-card__separator{
   width: 90%;
   height: 2px;
   background-color: var(--color-primary);
 }
 
 /* "Dagens Data" Section */
-.energy-sources__data-section {
+.energy-sources-card__data {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -312,7 +313,7 @@
 }
 
 /* Subtitle */
-.energy-sources__subtitle {
+.energy-sources-card__subtitle{
   font-family: var(--font-family-primary);
   font-weight: var(--font-weight-regular-400);
   color: var(--color-primary);
@@ -338,28 +339,28 @@
 
 /* themometer */
 
-.card--temperatur {
+.temperature-card__value{
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column; 
   position: relative; 
 }
-.card--temperaturesectionTitle{
+.temperature-card__title{
   color: var(--color-primary);
   display: flex;
   justify-content: center;
 }
-.card--temperaturSection{
+.temperature-card{
   padding-top: var(--spacing-m);
 }
 
-#card--temperatur-slider {
+#card__temperatur-slider {
   width: 200px;
   height: 200px;
   }
 
-.card--temperatur-inside {
+.card__temperatur-inside {
   font-size: 2rem;
   font-weight: bold;
   color: #201c29;
@@ -377,7 +378,7 @@
 }
 
 /* removes borderbox around temperatur in thermometer */
-#card--temperatur-slider:hover .rs-tooltip, .rs-tooltip:focus, .rs-tooltip-text:focus {
+#card__temperatur-slider:hover .rs-tooltip, .rs-tooltip:focus, .rs-tooltip-text:focus {
   transform: scale(1.1);
   transition: .1s;
   border: none;
@@ -385,7 +386,7 @@
 
 
 /* change color on dragable point in thermometer */
-#card--temperatur-slider .rs-handle {
+#card__temperatur-slider .rs-handle {
   background-color:white;
   filter: drop-shadow(3px -1px 2px rgba(0, 0, 0, 0.27));
 }
@@ -407,17 +408,16 @@
   border: none !important;
 }
 
-.room-item {
+.rooms-card__room {
   display: flex;
   justify-content: space-between; 
   align-items: center; 
-  padding: var(--spacing-m) var(--spacing-xs);
-  gap: var(--spacing-s);
+  padding: var(--spacing-xs) var(--spacing-xs);
   align-self: stretch; 
   background: rgba(255, 255, 255, 0.1);
   border-radius: 16px;
 }
-.card--rooms {
+.rooms-card {
   display: flex;
   flex-direction: column;
   align-items: center; 
@@ -427,22 +427,22 @@
 }
 
 /* Left Section: Icon + Name */
-.room-item__left {
+.rooms-card__name-details {
   display: flex;
   align-items: center; 
   gap: var(--spacing-xs); 
 }
 
 /* Right Section: Temperature + Icons */
-.room-item__right {
+.room-item__temperature-details {
   display: flex;
   align-items: center; 
   gap: var(--spacing-xs); 
 }
 
-.room-icon {
-  width: 24px; 
-  height: 24px; 
+.rooms-card__name{
+  color: var(--color-primary);
+  font-weight: var(--font-weight-title-black-900);
 }
 
 .room-item__name {
@@ -451,13 +451,13 @@
   font-weight: var(--font-weight-title-black-900);
 }
 
-.room-item__temperature {
+.rooms-card__temperature {
   color: var(--color-primary);
   margin: 0;
   font-weight: var(--font-weight-title-black-900);
 }
 
-.room-item__icon {
+.rooms-card-arrow__icon {
   font-size: 18px;
   color: var(--color-primary);
 }
