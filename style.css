@@ -55,11 +55,17 @@
 }
   body {
     margin: 0;
-    padding:0;
+    padding: 0;
     background: url('images/Background.png') no-repeat center center fixed;
     background-size: cover;
     overflow-y: scroll; /* That scroll effect */
   }
+  /* Media query override for iOS */
+@media screen and (max-width: 300px) {
+  body {
+    background-attachment: scroll; /* Override fixed attachment for mobile */
+  }
+}
   .card{
     color: var(--glass-background);
     border-radius: var(--glass-border-radius);
