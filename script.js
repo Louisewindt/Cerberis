@@ -4,7 +4,7 @@ $("#card__temperatur-slider").roundSlider({
   circleShape: "full",    // Circular shape
   sliderType: "min-range",
   mouseScrollAction: true,
-  value: 19,              // Initial temperature
+  value: 22,              // Initial temperature
   handleSize: "+5",
   min: 10,                // Minimum temperature
   max: 35,                // Maximum temperature
@@ -68,4 +68,57 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     console.error("Dropdown button or content not found.");
   }
+});
+
+
+
+
+// Get the toggle and all cards
+const editToggle = document.querySelector('#toggle-card-edit__checkbox');
+const draggableCards = document.querySelectorAll('.card');
+
+// Toggle edit mode
+editToggle.addEventListener('change', () => {
+  const isEditingEnabled = editToggle.checked;
+
+  draggableCards.forEach((card) => {
+    if (isEditingEnabled) {
+      card.setAttribute('draggable', 'true');
+      card.classList.add('draggable', 'shaking'); // Add shaking and draggable behavior
+    } else {
+      card.removeAttribute('draggable');
+      card.classList.remove('draggable', 'shaking'); // Remove behaviors
+    }
+  });
+});
+
+// Drag-and-Drop Events
+let draggedElement = null;
+
+draggableCards.forEach((card) => {
+  card.addEventListener('dragstart', (event) => {
+    draggedElement = event.target;
+    event.target.classList.add('dragging');
+  });
+
+  card.addEventListener('dragend', (event) => {
+    draggedElement = null;
+    event.target.classList.remove('dragging');
+  });
+
+  card.addEventListener('dragover', (event) => {
+    event.preventDefault(); // Allow drop
+  });
+
+  card.addEventListener('drop', (event) => {
+    if (draggedElement) {
+      const targetCard = event.target.closest('.card');
+      if (targetCard && targetCard !== draggedElement) {
+        targetCard.parentNode.insertBefore(
+          draggedElement,
+          targetCard.nextSibling
+        );
+      }
+    }
+  });
 });

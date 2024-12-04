@@ -68,6 +68,7 @@
     -webkit-backdrop-filter: var(--glass-backdrop-blur);
     backdrop-filter: var(--glass-backdrop-blur);
     margin: var(--spacing-s);
+    overflow: hidden;
   }
 
   .header {
@@ -383,7 +384,7 @@
 .dropdown__content {
   position: absolute;
   top: 100%;
-  background-color: #ffff;
+  background-color: transparent;
   border-radius: 4px;
   opacity: 0;
   visibility: hidden;
@@ -463,13 +464,16 @@
   justify-content: space-between;
   font-family: var(--font-family-primary);
   font-size: 16px;
+  padding-left: var(--spacing-xl);
   font-weight: var(--font-weight-bold-700);
   margin-top: 8px;
+  color: var(--color-secondary);
 }
 
 /* Chart Navigation */
 .chart__nav-buttons {
   margin-bottom: 20px;
+
 }
 
 .chart__nav-button {
@@ -798,12 +802,12 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 35px; /* Adjust size for the glow */
-  height: 35px; /* Adjust size for the glow */
+  width: 35px; 
+  height: 35px; 
   border-radius: 100%;
   border-color: var(--color-primary);
-  z-index: -1; /* Places it behind the menu item */
-  box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.5); /* Smooth glow effect */
+  z-index: -1; 
+  box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.5); 
 }
 
 .menu-item.sc-current::after {
@@ -812,11 +816,11 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 50px; /* Adjust size for the border */
-  height: 50px; /* Adjust size for the border */
-  border: 10px solid var(--color-primary); /* Primary color border */
+  width: 50px;
+  height: 50px; 
+  border: 10px solid var(--color-primary); 
   border-radius: 50%;
-  z-index: -2; /* Places it behind the menu item */
+  z-index: -2; 
 }
 
 .menu-icon {
@@ -843,3 +847,33 @@
 .content {
   padding-bottom:150px;
 }
+.card.dragging {
+  opacity: 0.5; /* Visual feedback when dragging */
+}
+.card__edit-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 24px;
+  height: 24px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  cursor: grab; /* Indicate draggable state */
+}
+
+.card.draggable .card__edit-icon {
+  opacity: 1; /* Show icon when in edit mode */
+}
+/* Shake animation */
+@keyframes shake {
+  0% { transform: rotate(-1deg); }
+  25% { transform: rotate(1deg); }
+  50% { transform: rotate(-1deg); }
+  75% { transform: rotate(1deg); }
+  100% { transform: rotate(0); }
+}
+
+.card.shaking {
+  animation: shake 0.3s infinite;
+}
+
