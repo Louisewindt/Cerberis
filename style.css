@@ -494,7 +494,7 @@
   font-weight: var(--font-weight-title-black-900); 
 }
 
-.card--energy-chart {
+.energy-chart-card {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -502,7 +502,7 @@
   gap: var(--spacing-s);
 }
 
-.energy-chart__title {
+.energy-chart-card__title {
   font-family: var(--font-family-primary);
   font-size: 24px;
   font-weight: var(--font-weight-bold-700);
@@ -512,7 +512,7 @@
 }
 
 /* Container for Indicators and Bars */
-.energy-chart__container {
+.energy-chart-card__container {
   display: flex;
   align-items: flex-end; 
   gap: var(--spacing-s); 
@@ -520,7 +520,7 @@
 }
 
 /* Left Indicators */
-.energy-chart__indicators {
+.energy-chart-card__indicators {
   display: flex;
   flex-direction: column;
   justify-content: space-between; /* Evenly distribute indicators */
@@ -532,7 +532,7 @@
 }
 
 /* Pillar Bars */
-.energy-chart__bars {
+.energy-chart-card__bars {
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -541,7 +541,7 @@
   height: 240px; 
 }
 
-.energy-chart__bar {
+.energy-chart-card__bar {
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -555,7 +555,7 @@
 }
 
 /* Bottom Labels */
-.energy-chart__labels {
+.energy-chart-card__labels {
   display: flex;
   justify-content: space-between;
   align-items: center;
