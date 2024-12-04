@@ -73,54 +73,62 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-// Get the toggle and all cards
+// Select the toggle and all cards
 const editToggle = document.querySelector('#toggle-card-edit__checkbox');
-const draggableCards = document.querySelectorAll('.card');
-let draggedElement = null;
+const cards = document.querySelectorAll('.card');
 
-// Enable edit mode: icons and shake
+let draggedElement = null; // Track the currently dragged card
+
+// Enable or disable draggable mode based on toggle
 editToggle.addEventListener('change', () => {
-  const isEditingEnabled = editToggle.checked;
+  const isEditMode = editToggle.checked;
 
-  draggableCards.forEach((card) => {
+  cards.forEach((card) => {
     const editIcon = card.querySelector('.card__edit-icon');
-    if (isEditingEnabled) {
+
+    if (isEditMode) {
       card.classList.add('shaking'); // Enable shaking animation
-      editIcon.style.pointerEvents = 'auto'; // Allow interaction with icon
+      editIcon.style.pointerEvents = 'auto'; // Allow interaction with the icon
     } else {
       card.classList.remove('shaking'); // Disable shaking animation
-      editIcon.style.pointerEvents = 'none'; // Disable interaction with icon
+      editIcon.style.pointerEvents = 'none'; // Disable interaction with the icon
+      card.removeAttribute('draggable'); // Ensure draggable is off
     }
   });
 });
 
-// Add drag functionality
-draggableCards.forEach((card) => {
+// Add drag-and-drop functionality
+cards.forEach((card) => {
   const editIcon = card.querySelector('.card__edit-icon');
 
-  // Start dragging when holding the icon (desktop and mobile)
-  editIcon.addEventListener('mousedown', (event) => startDragging(event, card));
-  editIcon.addEventListener('touchstart', (event) => startDragging(event, card));
+  // Enable dragging only when interacting with the icon
+  editIcon.addEventListener('mousedown', () => {
+    card.setAttribute('draggable', 'true'); // Enable drag
+  });
 
-  // Stop dragging when releasing the icon
-  editIcon.addEventListener('mouseup', stopDragging);
-  editIcon.addEventListener('touchend', stopDragging);
+  editIcon.addEventListener('touchstart', () => {
+    card.setAttribute('draggable', 'true'); // Enable drag
+  });
 
-  // Drag-and-drop events for the card
+  // Drag start
   card.addEventListener('dragstart', (event) => {
-    draggedElement = event.target;
-    event.target.classList.add('dragging'); // Visual feedback
+    draggedElement = card;
+    event.target.classList.add('dragging'); // Add visual feedback
   });
 
+  // Drag end
   card.addEventListener('dragend', (event) => {
+    event.target.classList.remove('dragging'); // Remove visual feedback
+    card.setAttribute('draggable', 'false'); // Disable drag after moving
     draggedElement = null;
-    event.target.classList.remove('dragging'); // Remove feedback
   });
 
+  // Allow dropping on other cards
   card.addEventListener('dragover', (event) => {
-    event.preventDefault(); // Allow dropping
+    event.preventDefault(); // Allow drop
   });
 
+  // Handle dropping and reordering
   card.addEventListener('drop', (event) => {
     if (draggedElement) {
       const targetCard = event.target.closest('.card');
@@ -133,18 +141,3 @@ draggableCards.forEach((card) => {
     }
   });
 });
-
-// Start dragging
-function startDragging(event, card) {
-  event.preventDefault(); // Prevent default behavior
-  card.setAttribute('draggable', 'true'); // Enable drag
-  draggedElement = card;
-}
-
-// Stop dragging
-function stopDragging() {
-  if (draggedElement) {
-    draggedElement.setAttribute('draggable', 'false'); // Disable drag
-    draggedElement = null;
-  }
-}

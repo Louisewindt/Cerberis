@@ -847,22 +847,28 @@
 .content {
   padding-bottom:150px;
 }
-.card.dragging {
-  opacity: 0.5; /* Visual feedback when dragging */
-}
+/* Edit Icon */
 .card__edit-icon {
   position: absolute;
   top: 10px;
   right: 10px;
   width: 24px;
   height: 24px;
-  opacity: 0;
+  opacity: 0; /* Hidden by default */
+  pointer-events: none; /* Disable interaction when hidden */
   transition: opacity 0.3s ease-in-out;
-  cursor: grab; /* Indicate draggable state */
 }
 
-.card.draggable .card__edit-icon {
-  opacity: 1; /* Show icon when in edit mode */
+.card.shaking .card__edit-icon {
+  opacity: 1; /* Show icon when shaking */
+  pointer-events: auto; /* Enable interaction */
+}
+
+/* Dragging Visual Feedback */
+.card.dragging {
+  opacity: 0.5;
+  transform: scale(1.02); /* Slightly enlarge */
+  transition: transform 0.2s ease;
 }
 /* Shake animation */
 @keyframes shake {
