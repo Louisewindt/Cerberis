@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Select the toggle and all cards
 const editToggle = document.querySelector('#toggle-card-edit__checkbox');
-const cards = document.querySelectorAll('.card');
+const cards = document.querySelectorAll('.card:not(.toggle-card-edit)'); // Exclude toggle card
 const container = document.querySelector('.content'); // Parent container of cards
 
 let draggedElement = null; // Track the currently dragged card
@@ -183,4 +183,43 @@ function stopDrag() {
   placeholder.remove();
   placeholder = null;
   draggedElement = null;
+}
+let lastTap = 0; // Track the last tap time for detecting double-tap
+
+// Add a double-tap listener for each card
+cards.forEach((card) => {
+  card.addEventListener('touchend', (event) => {
+    const currentTime = new Date().getTime();
+    const tapInterval = currentTime - lastTap;
+
+    if (tapInterval < 300 && tapInterval > 0) { // Double-tap detected
+      startDragWithDoubleTap(event, card);
+    }
+
+    lastTap = currentTime;
+  });
+});
+
+// Function to start dragging on double-tap
+function startDragWithDoubleTap(event, card) {
+  if (!editToggle.checked) return; // Only work in edit mode
+
+  // Simulate starting the drag process
+  const touch = event.changedTouches[0];
+  const rect = card.getBoundingClientRect();
+  offsetX = touch.clientX - rect.left;
+  offsetY = touch.clientY - rect.top;
+
+  draggedElement = card;
+  card.classList.add('dragging'); // Add visual feedback
+
+  // Allow positioning the card
+  card.style.position = 'absolute';
+  card.style.zIndex = 1000;
+
+  // Listen for movement
+  document.addEventListener('touchmove', moveDrag, { passive: false });
+
+  // Stop dragging when touch ends
+  document.addEventListener('touchend', stopDrag);
 }
