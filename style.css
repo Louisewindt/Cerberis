@@ -148,68 +148,93 @@
     
   }
   
-  /* Wrapper for toggles */
-.toggle-card {
-  display: flex;
-  flex-direction: row;
-  gap: var(--spacing-m);
-}
+/* Toggle Button */
 
-/* Individual toggle section */
-.toggle-card__toggle {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 154px;
-  height: 84px;
-  padding: var(--spacing-xs) var(--spacing-m);
-  border-radius: 16px;
-  border: 2px solid var(--color-glass-border);
-  background: var(--glass-bg);
-  backdrop-filter: var(--glass-blur);
-  text-align: center;
-}
-
-/* Labels */
-.toggle-card__label {
-  font-family: var(--font-family-primary);
-  font-size: var(--font-size-label);
-  font-weight: var(--font-weight-label);
-  color: var(--color-primary);
-  margin: 0;
-}
-
-.toggle-card__label-info {
-  font-family: var(--font-family-primary);
-  font-size: var(--font-size-info);
-  font-weight: var(--font-weight-info);
-  color: var(--color-primary);
-  margin: 0;
-}
-
-/* Toggle switch */
-.toggle-card__switch {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* Container til toggle */
+.toggle-card,
+.toggle-card-edit {
+  display: inline-block;
+  position: relative;
   width: 108px;
   height: 36px;
-  border-radius: 100px;
-  background: var(--color-white);
-  box-shadow: var(--box-shadow-toggle);
-  padding: var(--spacing-xxs);
 }
 
-/* Icon around toggle */
-.toggle-card__icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* Skjuler standard checkbox */
+#toggle-card__checkbox,
+#toggle-card-edit__checkbox {
+  display: none;
+}
+
+/* Label, som slider cirklen */
+.toggle-card__label,
+.toggle-card-edit__label {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #ffff; /* Inaktiv baggrund */
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+  border-radius: 100px;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+/* Cirklen inde i slideren */
+.toggle-card__circle,
+.toggle-card-edit__circle {
+  position: absolute;
+  top: 2px;
+  left: 2px;
   width: 32px;
   height: 32px;
-  border-radius: 37px;
-  background: var(--color-secondary);
+  background: #495675;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ikonet i cirklen */
+.toggle-card__icon,
+.toggle-card-edit__icon {
+  width: 68%;
+  height: auto;
+  margin-right: 2px;
+}
+
+.toggle-card__icon--inactive,
+.toggle-card-edit__icon--inactive {
+  position: relative;
+  width: 26px;
+  height: 26px;
+  margin: 5%;
+}
+
+.toggle-card-icon--right,
+.toggle-card-edit-icon--right {
+  right: -25%;
+}
+
+/* Flytter cirklen, når den er aktiv */
+#toggle-card__checkbox:checked + .toggle-card__label .toggle-card__circle {
+  transform: translateX(71px);
+  background-color: #FFCB3D;
+}
+
+#toggle-card-edit__checkbox:checked + .toggle-card-edit__label .toggle-card-edit__circle {
+  transform: translateX(71px);
+  background-color: #FFCB3D;
+}
+
+/* Ændrer ikonet baseret på tilstand */
+#toggle-card__checkbox:checked + .toggle-card__label .toggle-card__circle .toggle-card__icon {
+  content: url("images/icon__out-active.svg");
+}
+
+#toggle-card-edit__checkbox:checked + .toggle-card-edit__label .toggle-card-edit__circle .toggle-card-edit__icon {
+  content: url("images/icon__edited-active.svg");
 }
 
 /* Energy Sources Card */
@@ -220,7 +245,7 @@
 }
 
 /* Title */
-.card--energy-sources {
+.energy-sources-card__title {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -289,14 +314,6 @@
 }
 
 /* Individual Icon + Text */
-.energy-sources__heaterInfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--spacing-xxs);
-  width: var(--spacing-xxxxl);
-  color: var(--color-primary);
-}
 
 /* Separator Line */
 .energy-sources-card__separator{
@@ -338,6 +355,134 @@
   text-align: center;
 }
 
+.dropdown__button {
+  background-color: transparent;
+  padding: 20px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: -webkit-fill-available;
+  border-radius: 4px;
+
+}
+/* Icon for dropdown (arrow down) */
+  .dropdown-button__icon {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: solid #495675;
+    border-width: 2px 2px 0 0;
+    transform: rotate(135deg); /* Initial position (arrow down) */
+    transition: transform 0.3s ease;
+  }
+
+/* Dropdown Menu */
+.dropdown__content {
+  position: absolute;
+  top: 100%;
+  background-color: #ffff;
+  border-radius: 4px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.dropdown__content.active {
+  opacity: 1;
+  visibility: visible;
+  position: relative; /* Change to relative when active */
+}
+
+/* Chart Wrapper */
+.chart__wrapper {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Chart Sections */
+.chart__section {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.chart__section--active {
+  display: block;
+  opacity: 1;
+}
+
+/* Chart Container */
+.chart__container {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--spacing-s);
+  width: 100%;
+}
+
+/* Chart Indicators */
+.chart__indicators {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: var(--font-family-primary);
+  font-size: 16px;
+  font-weight: var(--font-weight-bold-700);
+  color: var(--color-primary);
+  gap: 32px;
+}
+
+/* Chart Bars */
+.chart__bars {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 12px;
+  flex-grow: 1;
+  height: 240px;
+}
+
+.chart__bar {
+  width: 24px;
+  height: var(--bar-height);
+  background: linear-gradient(180deg, var(--color-secondary) 0%, var(--color-neutral) 100%);
+  border-radius: 20px;
+  border: 1px solid var(--color-neutral);
+  transition: height 0.3s ease;
+}
+
+/* Chart Labels */
+.chart__labels {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-family-primary);
+  font-size: 16px;
+  font-weight: var(--font-weight-bold-700);
+  margin-top: 8px;
+}
+
+/* Chart Navigation */
+.chart__nav-buttons {
+  margin-bottom: 20px;
+}
+
+.chart__nav-button {
+  background-color: transparent;
+  color: #C7DCF0;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.chart__nav-button--active {
+  color: #FFCB3D;
+}
 
 /* themometer */
 
@@ -376,8 +521,16 @@
   font-family: var(--font-family-primary);
   font-weight: var(--font-weight-title-black-900); 
   color: var(--color-primary);
+  padding-left: var(--spacing-s);
   border: none;
 }
+.rs-tooltip.edit::after,.rs-tooltip .rs-input::after {
+  content: "°";
+  font-weight: var(--font-weight-title-black-900);
+  font-size: 32px;
+  position: relative;
+  bottom: var(--spacing-l);
+  }
 
 /* removes borderbox around temperatur in thermometer */
 #card__temperatur-slider:hover .rs-tooltip, .rs-tooltip:focus, .rs-tooltip-text:focus {

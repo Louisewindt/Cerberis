@@ -25,8 +25,6 @@
             <h2 class="header__weather-temperature">6°</h2>
             <svg class="header__weather-icon" xmlns="http://www.w3.org/2000/svg" width="38" height="24" viewBox="0 0 38 24" fill="none">
                 <circle cx="18.5558" cy="10.881" r="10.881" fill="#ECC135" />
-                <path d="..." fill="#A8A8A8" stroke="white" />
-                <path d="..." fill="#A8A8A8" stroke="white" />
             </svg>
         </section>
     </section>
@@ -41,22 +39,25 @@
 
 <!-- Toggles Section -->
 <section class="card toggle-card">
-    <!-- Toggle 1 -->
-    <section class="toggle-card__toggle">
-        <h3 class="toggle-card__label">Tilstand</h3>
-        <p class="toggle-card__label-info">(Hjemme)</p>
-        <section class="toggle-card__switch">
-            <section class="toggle-card__icon"></section>
-        </section>
-    </section>
-    <!-- Toggle 2 -->
-    <section class="toggle-card__toggle">
-        <h3 class="toggle-card__label">Rediger</h3>
-        <p class="toggle-card__label-info">(Home)</p>
-        <section class="toggle-card__switch">
-            <section class="toggle-card__icon"></section>
-        </section>
-    </section>
+  <input type="checkbox" id="toggle-card__checkbox" />
+  <label for="toggle-card__checkbox" class="toggle-card__label">
+      <img class="toggle-card__icon--inactive toggle-card-icon--left" src="images/icon__home-inactive.svg" alt="house Icon inactive">
+      <img class="toggle-card__icon--inactive toggle-card-icon--right " src="images/icon__out-inactive.svg" alt="door Icon inactive">
+    <span class="toggle-card__circle">
+      <img class="toggle-card__icon" src="images/icon__home-active.svg" alt="House Icon active" />
+    </span>
+  </label>
+</section>
+
+<section class="card toggle-card-edit">
+  <input type="checkbox" id="toggle-card-edit__checkbox" />
+  <label for="toggle-card-edit__checkbox" class="toggle-card__label toggle-card-edit__label">
+      <img class="toggle-card__icon--inactive toggle-card-icon--left " src="images/icon__edit-inactive.svg" alt="house Icon inactive">
+      <img class="toggle-card__icon--inactive toggle-card-icon--right " src="images/icon__edited-inactive.svg" alt="door Icon inactive">
+    <span class="toggle-card__circle toggle-card-edit__circle">
+      <img class="toggle-card__icon toggle-card-edit__icon" src="images/icon__edit-active.svg" alt="House Icon active" />
+    </span>
+  </label>
 </section>
 
 <!-- Energy Sources Section -->
@@ -94,9 +95,121 @@
       <p class="energy-sources__data-item">Sparet: 0,50 kr</p>
     </section>
   </section>
-  <section>
-    <img src="images/dropdown.svg" alt="downdown arrow" class="energy-sources__data-dropdown">
+
+  <button class="dropdown__button">
+    <span class="dropdown-button__icon"></span>
+  </button>
+  <section class="dropdown__content">
+    <!-- Container for Indicators and Bars -->
+    <section class="chart__wrapper">
+      <section class="chart__sections">
+        <section id="chart__week" class="chart__section chart__section--active">
+          <h2 class="chart__title">Ugens energiforbrug</h2>
+          <section class="chart__container">
+            <!-- Left Indicators -->
+            <section class="chart__indicators">
+              <span>50</span>
+              <span>40</span>
+              <span>30</span>
+              <span>20</span>
+              <span>10</span>
+            </section>
+  
+            <!-- Bars -->
+            <section class="chart__bars">
+              <section class="chart__bar" style="--bar-height: 50%;"></section>
+              <section class="chart__bar" style="--bar-height: 40%;"></section>
+              <section class="chart__bar" style="--bar-height: 30%;"></section>
+              <section class="chart__bar" style="--bar-height: 70%;"></section>
+              <section class="chart__bar" style="--bar-height: 90%;"></section>
+              <section class="chart__bar" style="--bar-height: 20%;"></section>
+              <section class="chart__bar" style="--bar-height: 10%;"></section>
+            </section>
+          </section>
+  
+          <!-- Bottom Labels -->
+          <section class="chart__labels">
+            <span>Man</span>
+            <span>Tir</span>
+            <span>Ons</span>
+            <span>Tor</span>
+            <span>Fre</span>
+            <span>Lør</span>
+            <span>Søn</span>
+          </section>
+        </section>
+  
+        <section id="chart__month" class="chart__section">
+          <h2 class="chart__title">Månedens energiforbrug</h2>
+          <section class="chart__container">
+            <section class="chart__indicators">
+              <span>50</span>
+              <span>40</span>
+              <span>30</span>
+              <span>20</span>
+              <span>10</span>
+            </section>
+            <section class="chart__bars">
+              <section class="chart__bar" style="--bar-height: 50%;"></section>
+              <section class="chart__bar" style="--bar-height: 40%;"></section>
+              <section class="chart__bar" style="--bar-height: 30%;"></section>
+              <section class="chart__bar" style="--bar-height: 70%;"></section>
+              <section class="chart__bar" style="--bar-height: 90%;"></section>
+              <section class="chart__bar" style="--bar-height: 20%;"></section>
+              <section class="chart__bar" style="--bar-height: 10%;"></section>
+            </section>
+          </section>
+          <section class="chart__labels">
+            <span>Man</span>
+            <span>Tir</span>
+            <span>Ons</span>
+            <span>Tor</span>
+            <span>Fre</span>
+            <span>Lør</span>
+            <span>Søn</span>
+          </section>
+        </section>
+  
+        <section id="chart__year" class="chart__section">
+          <h2 class="chart__title">Årets energiforbrug</h2>
+          <section class="chart__container">
+            <section class="chart__indicators">
+              <span>50</span>
+              <span>40</span>
+              <span>30</span>
+              <span>20</span>
+              <span>10</span>
+            </section>
+            <section class="chart__bars">
+              <section class="chart__bar" style="--bar-height: 50%;"></section>
+              <section class="chart__bar" style="--bar-height: 40%;"></section>
+              <section class="chart__bar" style="--bar-height: 30%;"></section>
+              <section class="chart__bar" style="--bar-height: 70%;"></section>
+              <section class="chart__bar" style="--bar-height: 90%;"></section>
+              <section class="chart__bar" style="--bar-height: 20%;"></section>
+              <section class="chart__bar" style="--bar-height: 10%;"></section>
+            </section>
+          </section>
+          <section class="chart__labels">
+            <span>Man</span>
+            <span>Tir</span>
+            <span>Ons</span>
+            <span>Tor</span>
+            <span>Fre</span>
+            <span>Lør</span>
+            <span>Søn</span>
+          </section>
+        </section>
+      </section>
+    </section>
+  
+    <section class="chart__nav-buttons">
+      <button class="chart__nav-button chart__nav-button--week" data-section="chart__week">Ugens</button>
+      <button class="chart__nav-button chart__nav-button--month" data-section="chart__month">Månedens</button>
+      <button class="chart__nav-button chart__nav-button--year" data-section="chart__year">Årets</button>
+    </section>
   </section>
+  
 </section>
 
 <!-- Temperature Control Section -->
@@ -106,7 +219,6 @@
   </section>
 <section class="temperature-card__value">
   <section id="card__temperatur-slider" class="rslider"></section>
-  <span class="card__temperatur-inside">°</span>
 </section>
 </section>
 
