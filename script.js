@@ -17,7 +17,7 @@ $("#card__temperatur-slider").roundSlider({
 function updateRoomTemperatures(newTemp) {
   const roomTemperatures = document.querySelectorAll(".rooms-card__temperature"); // Select all temperature elements
   roomTemperatures.forEach((tempElement) => {
-    tempElement.textContent = `${newTemp}Â°`; // Update the text content with the new temperature
+    tempElement.textContent = `${newTemp}°`; // Update the text content with the new temperature
   });
 }
 
@@ -219,3 +219,5 @@ function startDragWithDoubleTap(event, card) {
   document.addEventListener('touchmove', moveDrag, { passive: false }); // Listen for drag movement
   document.addEventListener('touchend', stopDrag); // Stop dragging on touch end
 }
+
+y
