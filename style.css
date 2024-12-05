@@ -802,12 +802,12 @@
   justify-content: space-between;
   align-items: center;
   padding: var(--spacing-m);
+  height: 32px;
   background-color: var(--color-primary);
   box-shadow: var(--menu-shadow);
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   z-index: 10;
-  height: var(--menu-height);
   
 }
 
@@ -820,9 +820,10 @@
 }
 
 .menu-item.sc-current {
-  transform: translateY(-20px) scale(1.7);
+  transform: translateY(-20px) scale(1.4);
   z-index: 3;
   border: #495675;
+  border ;
 }
 .menu-item.sc-current::before {
   content: "";
@@ -830,8 +831,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 35px; 
-  height: 35px; 
+  width: 30px; 
+  height: 30px; 
   border-radius: 100%;
   border-color: var(--color-primary);
   z-index: -1; 
@@ -844,19 +845,20 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 50px;
-  height: 50px; 
-  border: 10px solid var(--color-primary); 
+  width: 30px;
+  height: 30px; 
+  border: 12px solid var(--color-primary); 
   border-radius: 50%;
   z-index: -2; 
 }
 
 .menu-icon {
-  width: 50px;
-  height: 50px;
+  width: 40px; /* Reduced icon size */
+  height: 40px; /* Reduced icon size */
 }
-.menu-icon-small{
-  width: 75px;
+
+.menu-icon-small {
+  width: 60px; /* Adjusted for smaller icons */
   height: auto;
 }
 .menu-indicator {
