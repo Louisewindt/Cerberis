@@ -68,6 +68,7 @@
     -webkit-backdrop-filter: var(--glass-backdrop-blur);
     backdrop-filter: var(--glass-backdrop-blur);
     margin: var(--spacing-s);
+    overflow: hidden;
   }
 
   .header {
@@ -76,9 +77,13 @@
     align-items: center; 
     margin: var(--spacing-s);
   }
-  
-  .header__title {
+  .header__title{
     color: var(--color-primary);
+  }
+  
+  .header__weather-temperature {
+    color: var(--color-primary);
+    font-weight: var(--font-weight-bold-700);
   }
   
   .header__weather {
@@ -90,8 +95,8 @@
     background: var(--color-neutral);
     border: 2px solid var(--color-border);
     box-shadow: var(--shadow-default);
-    border-radius: 16px;
-    padding: var(--spacing-xs) var(--spacing-xs) var(--spacing-xs) var(--spacing-s);
+    border-radius: 100px;
+    padding: var(--spacing-xs) var(--spacing-s) var(--spacing-xs) var(--spacing-s);
   }
   
   .header__weather-content {
@@ -101,13 +106,6 @@
     gap: var(--spacing-xxs);
   }
   
-  .header__weather-temperature {
-    font-family: var(--font-family-primary);
-    font-size: var(--font-size-subheading);
-    font-weight: var(--font-weight-heading);
-    color: var(--color-primary);
-    line-height: normal;
-  }
   
   .header__weather-icon {
     width: 32px;
@@ -149,6 +147,34 @@
   }
   
 /* Toggle Button */
+
+.toggle{
+  display: flex; /* Enable flexbox */
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  flex-direction: column;
+  padding: var(--spacing-xs, --spacing-xs) var(--Spacing-, --spacing-m);
+  color: var(--glass-background);
+  border-radius: var(--glass-border-radius);
+  -webkit-backdrop-filter: var(--glass-backdrop-blur);
+  backdrop-filter: var(--glass-backdrop-blur);
+  margin: var(--spacing-s);
+  overflow: hidden;
+
+}
+.toggle-card-title{
+  color: var(--color-primary);
+}
+.toggles{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start; /* Align at the top */
+}
+.toggle-card-home{
+  padding-bottom: var(--spacing-s);
+  gap: var(--spacing-s);
+}
 
 /* Container til toggle */
 .toggle-card,
@@ -317,11 +343,14 @@
 
 /* Separator Line */
 .energy-sources-card__separator{
-  width: 90%;
+  width: 100%;
   height: 2px;
   background-color: var(--color-primary);
 }
 
+.chart__title{
+  color: var(--color-primary);
+}
 /* "Dagens Data" Section */
 .energy-sources-card__data {
   display: flex;
@@ -383,7 +412,7 @@
 .dropdown__content {
   position: absolute;
   top: 100%;
-  background-color: #ffff;
+  background-color: transparent;
   border-radius: 4px;
   opacity: 0;
   visibility: hidden;
@@ -463,13 +492,16 @@
   justify-content: space-between;
   font-family: var(--font-family-primary);
   font-size: 16px;
+  padding-left: var(--spacing-xl);
   font-weight: var(--font-weight-bold-700);
   margin-top: 8px;
+  color: var(--color-secondary);
 }
 
 /* Chart Navigation */
 .chart__nav-buttons {
   margin-bottom: 20px;
+
 }
 
 .chart__nav-button {
@@ -771,12 +803,12 @@
   justify-content: space-between;
   align-items: center;
   padding: var(--spacing-m);
+  height: 32px;
   background-color: var(--color-primary);
   box-shadow: var(--menu-shadow);
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   z-index: 10;
-  height: var(--menu-height);
   
 }
 
@@ -789,7 +821,7 @@
 }
 
 .menu-item.sc-current {
-  transform: translateY(-20px) scale(1.7);
+  transform: translateY(-20px) scale(1.4);
   z-index: 3;
   border: #495675;
 }
@@ -799,12 +831,12 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 35px; /* Adjust size for the glow */
-  height: 35px; /* Adjust size for the glow */
+  width: 30px; 
+  height: 30px; 
   border-radius: 100%;
   border-color: var(--color-primary);
-  z-index: -1; /* Places it behind the menu item */
-  box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.5); /* Smooth glow effect */
+  z-index: -1; 
+  box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.5); 
 }
 
 .menu-item.sc-current::after {
@@ -813,19 +845,20 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 50px; /* Adjust size for the border */
-  height: 50px; /* Adjust size for the border */
-  border: 10px solid var(--color-primary); /* Primary color border */
+  width: 30px;
+  height: 30px; 
+  border: 12px solid var(--color-primary); 
   border-radius: 50%;
-  z-index: -2; /* Places it behind the menu item */
+  z-index: -2; 
 }
 
 .menu-icon {
-  width: 50px;
-  height: 50px;
+  width: 40px; /* Reduced icon size */
+  height: 40px; /* Reduced icon size */
 }
-.menu-icon-small{
-  width: 75px;
+
+.menu-icon-small {
+  width: 60px; /* Adjusted for smaller icons */
   height: auto;
 }
 .menu-indicator {
@@ -996,3 +1029,39 @@
     transform: scale(1); /* Back to normal size */
   }
 }
+/* Edit Icon */
+.card__edit-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 24px;
+  height: 24px;
+  opacity: 0; /* Hidden by default */
+  pointer-events: none; /* Disable interaction when hidden */
+  transition: opacity 0.3s ease-in-out;
+}
+
+.card.shaking .card__edit-icon {
+  opacity: 1; /* Show icon when shaking */
+  pointer-events: auto; /* Enable interaction */
+}
+
+/* Dragging Visual Feedback */
+.card.dragging {
+  opacity: 0.5;
+  transform: scale(1.02); /* Slightly enlarge */
+  transition: transform 0.2s ease;
+}
+/* Shake animation */
+@keyframes shake {
+  0% { transform: rotate(-0.7deg); }
+  25% { transform: rotate(0.7deg); }
+  50% { transform: rotate(-0.7deg); }
+  75% { transform: rotate(0.7deg); }
+  100% { transform: rotate(0); }
+}
+
+.card.shaking {
+  animation: shake 0.3s infinite;
+}
+
