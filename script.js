@@ -69,3 +69,21 @@ document.addEventListener("DOMContentLoaded", () => {
     console.error("Dropdown button or content not found.");
   }
 });
+
+
+
+const lockIcon = document.getElementById("lock-icon");
+
+let isLocked = true; // Initial state: open
+
+lockIcon.addEventListener("click", () => {
+  if (isLocked) {
+    // Animate from locked to open
+    lockIcon.style.animation = "lockOpen 1s ease forwards";
+    isLocked = false; // Update state to unlocked
+  } else {
+    // Animate from open to locked
+    lockIcon.style.animation = "lockClose 1s ease forwards";
+    isLocked = true; // Update state to locked
+  }
+});

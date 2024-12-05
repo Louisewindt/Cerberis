@@ -500,6 +500,7 @@
 }
 .temperature-card{
   padding-top: var(--spacing-m);
+  padding-bottom: var(--spacing-l);
 }
 
 #card__temperatur-slider {
@@ -839,7 +840,159 @@
   transition: left 0.3s ease;
 }
 
-
 .content {
   padding-bottom:150px;
+}
+
+
+
+.back-button{
+    background-color: transparent;
+    padding: var(--spacing-m);
+    border: none;
+}
+
+/* back arrow */
+.back-button-icon {
+  display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: solid #495675;
+    border-width: 4px 4px 0 0;
+    transform: rotate(-135deg);
+    transition: transform 0.3s ease;
+}
+
+
+
+/* Room site design*/
+
+
+/* header om roomsite */
+.header-room{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 18px 8px;
+  gap: var(--Spacing-XXS, 4px);
+  
+}
+
+
+.header-room-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--Spacing-XXS, 4px);
+  flex: 1 0 0;
+}
+
+
+.header-room-info__icon{
+  width: 50px;
+}
+
+/* Container for the header-room-edit toggle */
+.header-room-edit {
+  display: inline-block;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* Hides the checkbox */
+#header-room-edit__checkbox {
+  display: none;
+}
+
+/* Label serves as the clickable toggle area */
+.header-room-edit__label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* Base styling for icons */
+.header-room-edit__icon {
+  position: absolute;
+  width: 100%; 
+  height: auto;
+  transition: opacity 0.3s ease; 
+  opacity: 0;
+  pointer-events: none; 
+}
+
+/* Show inactive icon by default */
+.header-room-edit__icon--inactive {
+  opacity: 1;
+}
+
+/* Show active icon when checkbox is checked */
+#header-room-edit__checkbox:checked + .header-room-edit__label .header-room-edit__icon--inactive {
+  opacity: 0;
+}
+
+#header-room-edit__checkbox:checked + .header-room-edit__label .header-room-edit__icon--active {
+  opacity: 1;
+  width: 28px;
+}
+
+
+/* add margin to bottom of */
+.temperature-card, .-room{
+  margin-bottom: 200px;
+}
+
+
+/* Lock container */
+.temperature-card__lock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: var(--spacing-m);
+  cursor: pointer; /* Makes the lock clickable */
+}
+
+/* Lock icon styling */
+.lock-icon {
+  height: auto;
+  animation: none; /* No animation initially */
+}
+
+/* Keyframes for lock opening animation */
+@keyframes lockOpen {
+  0% {
+    content: url("images/icon__lock-open.svg"); /* Start open */
+    transform: scale(1); /* Normal size */
+  }
+  50% {
+    content: url("images/icon__lock-halfOpen.svg"); /* Half-open state */
+    transform: scale(1.1); /* Slight enlargement */
+  }
+  100% {
+    content: url("images/icon__lock-closed.svg"); /* Closed */
+    transform: scale(1); /* Normal size */
+  }
+}
+
+/* Keyframes for lock closing animation */
+@keyframes lockClose {
+  0% {
+    content: url("images/icon__lock-closed.svg"); /* Start fully open */
+    transform: scale(1); /* Normal size */
+  }
+  50% {
+    content: url("images/icon__lock-halfOpen.svg"); /* Transition to half-open */
+    transform: scale(1.1); /* Slight enlargement */
+  }
+  100% {
+    content: url("images/icon__lock-open.svg"); /* Fully locked */
+    transform: scale(1); /* Back to normal size */
+  }
 }
