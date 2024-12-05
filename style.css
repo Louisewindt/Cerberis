@@ -1023,6 +1023,63 @@
   animation: shake 0.3s infinite;
 }
 
+/* Container for the lock toggle */
+.temperature-card__lock {
+  padding-top: var(--spacing-m);
+  margin: auto;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Hides the checkbox */
+.lock-toggle {
+  display: none;
+}
+
+/* Label as the clickable toggle area */
+.lock-icon-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* Base styling for lock icons */
+.lock-icon {
+  position: absolute;
+  transition: opacity 0.3s ease; 
+  opacity: 0; /* Default hidden */
+  pointer-events: none;
+}
+
+/* Show open lock icon by default */
+.lock-icon--open {
+  opacity: 1;
+}
+
+/* Hide open lock and show closed lock when checkbox is checked */
+.lock-toggle:checked + .lock-icon-label .lock-icon--open {
+  opacity: 0;
+}
+
+.lock-toggle:checked + .lock-icon-label .lock-icon--closed {
+  opacity: 1;
+}
+
+/* add margin to bottom of */
+.temperature-card-room{
+  margin-bottom: 200px;
+}
+
+
+
+
+
+
 
 
 
