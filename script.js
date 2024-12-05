@@ -219,5 +219,3 @@ function startDragWithDoubleTap(event, card) {
   document.addEventListener('touchmove', moveDrag, { passive: false }); // Listen for drag movement
   document.addEventListener('touchend', stopDrag); // Stop dragging on touch end
 }
-
-y

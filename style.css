@@ -605,6 +605,14 @@
   background: rgba(255, 255, 255, 0.1);
   border-radius: 16px;
 }
+.rooms-card__room-link {
+  text-decoration: none; /* Remove underline from the link */
+  color: inherit; /* Inherit text color */
+  display: block; /* Make the link behave like a block element */
+  width: 100%; /* Ensure it spans the full width of the container */
+  margin: 0; /* Remove any default margins */
+  padding: 0; /* Remove any default padding */
+}
 .rooms-card {
   display: flex;
   flex-direction: column;
@@ -977,58 +985,8 @@
 }
 
 
-/* add margin to bottom of */
-.temperature-card, .-room{
-  margin-bottom: 200px;
-}
 
 
-/* Lock container */
-.temperature-card__lock {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: var(--spacing-m);
-  cursor: pointer; /* Makes the lock clickable */
-}
-
-/* Lock icon styling */
-.lock-icon {
-  height: auto;
-  animation: none; /* No animation initially */
-}
-
-/* Keyframes for lock opening animation */
-@keyframes lockOpen {
-  0% {
-    content: url("images/icon__lock-open.svg"); /* Start open */
-    transform: scale(1); /* Normal size */
-  }
-  50% {
-    content: url("images/icon__lock-halfOpen.svg"); /* Half-open state */
-    transform: scale(1.1); /* Slight enlargement */
-  }
-  100% {
-    content: url("images/icon__lock-closed.svg"); /* Closed */
-    transform: scale(1); /* Normal size */
-  }
-}
-
-/* Keyframes for lock closing animation */
-@keyframes lockClose {
-  0% {
-    content: url("images/icon__lock-closed.svg"); /* Start fully open */
-    transform: scale(1); /* Normal size */
-  }
-  50% {
-    content: url("images/icon__lock-halfOpen.svg"); /* Transition to half-open */
-    transform: scale(1.1); /* Slight enlargement */
-  }
-  100% {
-    content: url("images/icon__lock-open.svg"); /* Fully locked */
-    transform: scale(1); /* Back to normal size */
-  }
-}
 /* Edit Icon */
 .card__edit-icon {
   position: absolute;
@@ -1063,5 +1021,60 @@
 
 .card.shaking {
   animation: shake 0.3s infinite;
+}
+
+
+
+
+
+
+
+/*Rooms pages*/
+
+/* Container for the lock toggle */
+.temperature-card__lock {
+  padding-top: var(--spacing-m);
+  margin: auto;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Hides the checkbox */
+.lock-toggle {
+  display: none;
+}
+
+/* Label as the clickable toggle area */
+.lock-icon-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* Base styling for lock icons */
+.lock-icon {
+  position: absolute;
+  transition: opacity 0.3s ease; 
+  opacity: 0; / Default hidden /
+  pointer-events: none;
+}
+
+/* Show open lock icon by default */
+.lock-icon--open {
+  opacity: 1;
+}
+
+/* Hide open lock and show closed lock when checkbox is checked */
+.lock-toggle:checked + .lock-icon-label .lock-icon--open {
+  opacity: 0;
+}
+
+.lock-toggle:checked + .lock-icon-label .lock-icon--closed {
+  opacity: 1;
 }
 

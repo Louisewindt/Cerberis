@@ -12,9 +12,11 @@
 </head>
 <body>
     
-    <button class="back-button">
-        <span class="back-button-icon"></span>
-      </button>
+    <a href="index.html" class="back-button-link">
+        <button class="back-button">
+          <span class="back-button-icon"></span>
+        </button>
+      </a>
 
       <section class="header-room card">
         <section class="header-room-info">
@@ -41,12 +43,19 @@
       </section>
 
       <section class="temperature-card__lock">
-        <img
-          src="images/icon__lock-open.svg"
-          alt="Lock Closed"
-          class="lock-icon"
-          id="lock-icon"
-        />
+        <input type="checkbox" id="lock-toggle" class="lock-toggle" />
+        <label for="lock-toggle" class="lock-icon-label">
+          <img
+            class="lock-icon lock-icon--open"
+            src="images/icon__lock-open.svg"
+            alt="Lock Open"
+          />
+          <img
+            class="lock-icon lock-icon--closed"
+            src="images/icon__lock-closed.svg"
+            alt="Lock Closed"
+          />
+        </label>
       </section>
 
     </section>
