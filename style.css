@@ -343,11 +343,14 @@
 
 /* Separator Line */
 .energy-sources-card__separator{
-  width: 90%;
+  width: 100%;
   height: 2px;
   background-color: var(--color-primary);
 }
 
+.chart__title{
+  color: var(--color-primary);
+}
 /* "Dagens Data" Section */
 .energy-sources-card__data {
   display: flex;
@@ -820,7 +823,6 @@
   transform: translateY(-20px) scale(1.4);
   z-index: 3;
   border: #495675;
-  border ;
 }
 .menu-item.sc-current::before {
   content: "";
