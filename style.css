@@ -77,9 +77,13 @@
     align-items: center; 
     margin: var(--spacing-s);
   }
-  
-  .header__title {
+  .header__title{
     color: var(--color-primary);
+  }
+  
+  .header__weather-temperature {
+    color: var(--color-primary);
+    font-weight: var(--font-weight-bold-700);
   }
   
   .header__weather {
@@ -91,8 +95,8 @@
     background: var(--color-neutral);
     border: 2px solid var(--color-border);
     box-shadow: var(--shadow-default);
-    border-radius: 16px;
-    padding: var(--spacing-xs) var(--spacing-xs) var(--spacing-xs) var(--spacing-s);
+    border-radius: 100px;
+    padding: var(--spacing-xs) var(--spacing-s) var(--spacing-xs) var(--spacing-s);
   }
   
   .header__weather-content {
@@ -102,13 +106,6 @@
     gap: var(--spacing-xxs);
   }
   
-  .header__weather-temperature {
-    font-family: var(--font-family-primary);
-    font-size: var(--font-size-subheading);
-    font-weight: var(--font-weight-heading);
-    color: var(--color-primary);
-    line-height: normal;
-  }
   
   .header__weather-icon {
     width: 32px;
