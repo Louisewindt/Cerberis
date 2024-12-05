@@ -219,19 +219,3 @@ function startDragWithDoubleTap(event, card) {
   document.addEventListener('touchmove', moveDrag, { passive: false }); // Listen for drag movement
   document.addEventListener('touchend', stopDrag); // Stop dragging on touch end
 }
-
-const lockIcon = document.getElementById("lock-icon");
-
-let isLocked = true; // Initial state: open
-
-lockIcon.addEventListener("click", () => {
-  if (isLocked) {
-    // Animate from locked to open
-    lockIcon.style.animation = "lockOpen 1s ease forwards";
-    isLocked = false; // Update state to unlocked
-  } else {
-    // Animate from open to locked
-    lockIcon.style.animation = "lockClose 1s ease forwards";
-    isLocked = true; // Update state to locked
-  }
-});
