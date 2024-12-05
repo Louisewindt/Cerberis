@@ -151,6 +151,22 @@
   
 /* Toggle Button */
 
+.toggle{
+  display: flex; /* Enable flexbox */
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  flex-direction: column;
+  padding: var(--spacing-xs, --spacing-xs) var(--Spacing-M, --spacing-m);
+  height:;
+}
+.toggles{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start; /* Align at the top */
+  gap: var(--spacing-l, 20px); /* Add spacing between the toggles */
+}
+
 /* Container til toggle */
 .toggle-card,
 .toggle-card-edit {
