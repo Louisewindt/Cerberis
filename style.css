@@ -156,15 +156,27 @@
   justify-content: center; /* Center items horizontally */
   align-items: center; /* Center items vertically */
   flex-direction: column;
-  padding: var(--spacing-xs, --spacing-xs) var(--Spacing-M, --spacing-m);
-  height:;
+  padding: var(--spacing-xs, --spacing-xs) var(--Spacing-, --spacing-m);
+  color: var(--glass-background);
+  border-radius: var(--glass-border-radius);
+  -webkit-backdrop-filter: var(--glass-backdrop-blur);
+  backdrop-filter: var(--glass-backdrop-blur);
+  margin: var(--spacing-s);
+  overflow: hidden;
+
+}
+.toggle-card-title{
+  color: var(--color-primary);
 }
 .toggles{
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: flex-start; /* Align at the top */
-  gap: var(--spacing-l, 20px); /* Add spacing between the toggles */
+}
+.toggle-card-home{
+  padding-bottom: var(--spacing-s);
+  gap: var(--spacing-s);
 }
 
 /* Container til toggle */
