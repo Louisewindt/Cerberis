@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const toggleButton = document.querySelector(".dropdownSectionbutton");
-    const dropdownContent = document.querySelector(".dropdownSectioncontent");
+    const toggleButton = document.querySelector(".dropdownSection__button");
+    const dropdownContent = document.querySelector(".dropdownSection__content");
   
     if (toggleButton && dropdownContent) {
       toggleButton.addEventListener("click", () => {
@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
       // Close dropdown when clicking outside
       document.addEventListener("click", (event) => {
-        if (!event.target.closest(".dropdownSectionbutton") && !event.target.closest(".dropdownSectioncontent")) {
+        if (!event.target.closest(".dropdownSection__button") && !event.target.closest(".dropdownSection__content")) {
           toggleButton.classList.remove("active");
           dropdownContent.style.opacity = "0";
           dropdownContent.style.visibility = "hidden";
