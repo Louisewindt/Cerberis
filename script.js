@@ -40,6 +40,40 @@ menuItems.forEach((item) => {
     indicator.style.left = `${leftPosition}px`; // Move the indicator to the new position
   });
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const toggleButton = document.querySelector(".dropdownSectionbutton");
+  const dropdownContent = document.querySelector(".dropdownSectioncontent");
+
+  toggleButton.addEventListener("click", () => {
+    toggleButton.classList.toggle("active");
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener("click", (event) => {
+    if (!event.target.closest(".card--energy-sources")) {
+      toggleButton.classList.remove("active");
+    }
+  });
+});
+
+
+
+/* change the graf */
+document.addEventListener("DOMContentLoaded", () => {
+  const buttons = document.querySelectorAll(".nav-button");
+  const sections = document.querySelectorAll(".section");
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      buttons.forEach((btn) => btn.classList.remove("active"));
+      sections.forEach((section) => section.classList.remove("active"));
+
+      button.classList.add("active");
+      const sectionId = button.getAttribute("data-section");
+      document.getElementById(sectionId).classList.add("active");
+    });
+  });
+});
 
 // Set the initial position of the indicator on page load
 document.addEventListener('DOMContentLoaded', () => {
