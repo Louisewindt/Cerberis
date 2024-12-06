@@ -149,9 +149,9 @@
 /* Toggle Button */
 
 .toggle{
-  display: flex; /* Enable flexbox */
-  justify-content: center; /* Center items horizontally */
-  align-items: center; /* Center items vertically */
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
   flex-direction: column;
   padding: var(--spacing-xs, --spacing-xs) var(--Spacing-, --spacing-m);
   color: var(--glass-background);
@@ -169,7 +169,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: flex-start; /* Align at the top */
+  align-items: flex-start; 
 }
 .toggle-card-home{
   padding-bottom: var(--spacing-s);
@@ -474,7 +474,7 @@
 .energy-chart-card__indicators {
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Evenly distribute indicators */
+  justify-content: space-between; 
   font-family: var(--font-family-primary);
   font-size: 16px;
   font-weight: var(--font-weight-bold-700);
@@ -558,7 +558,7 @@
   box-shadow: var(--menu-shadow);
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
-  z-index: 1000; /* High z-index to avoid conflicts */
+  z-index: 1000; 
   
 }
 
@@ -603,12 +603,12 @@
 }
 
 .bottom-menu__icon {
-  width: 40px; /* Reduced icon size */
-  height: 40px; /* Reduced icon size */
+  width: 40px; 
+  height: 40px; 
 }
 
 .menu-icon-small {
-  width: 80px; /* Adjusted for smaller icons */
+  width: 80px; 
   height: auto;
 }
 .menu-indicator {
@@ -650,7 +650,6 @@
 
 
 /* Room site design*/
-
 
 /* header om roomsite */
 .header-room{
@@ -737,20 +736,20 @@
   right: 10px;
   width: 24px;
   height: 24px;
-  opacity: 0; /* Hidden by default */
-  pointer-events: none; /* Disable interaction when hidden */
+  opacity: 0; 
+  pointer-events: none;
   transition: opacity 0.3s ease-in-out;
 }
 
 .card.shaking .card__edit-icon {
-  opacity: 1; /* Show icon when shaking */
-  pointer-events: auto; /* Enable interaction */
+  opacity: 1; 
+  pointer-events: auto; 
 }
 
 /* Dragging Visual Feedback */
 .card.dragging {
   opacity: 0.5;
-  transform: scale(1.02); /* Slightly enlarge */
+  transform: scale(1.02); 
   transition: transform 0.2s ease;
 }
 /* Shake animation */
@@ -842,7 +841,7 @@
   height: 12px;
   border: solid #495675;
   border-width: 2px 2px 0 0;
-  transform: rotate(135deg); /* Initial position (arrow down) */
+  transform: rotate(135deg); 
   transition: transform 0.3s ease;
 }
 
@@ -861,7 +860,7 @@
 
 
 .dropdownSection__button.active .dropdownSection__icon {
-  transform: rotate(-45deg); /* Arrow pointing upwards */
+  transform: rotate(-45deg); 
 }
 
 /* Show the menu when active */
@@ -923,8 +922,8 @@ color: var(--color-primary);
 display: flex;
 justify-content: center;
 align-items: center;
-width: 64px; /* Circle width */
-height: 64px; /* Circle height */
+width: 64px; 
+height: 64px; 
 border-radius: 50%;
 background-color: var(--c);
 box-shadow: var(--shadow-default);
@@ -982,7 +981,7 @@ text-align: center;
 display: flex;
 justify-content: center;
 align-items: center;
-width: 100%; /* Stretch to card width */
+width: 100%; 
 gap: var(--spacing-m);
 }
 
@@ -996,16 +995,16 @@ text-align: center;
 /* Container for Indicators and Bars */
 .alternative-energy-card__chart-container {
 display: flex;
-align-items: flex-end; /* Align indicators and bars at the bottom */
-gap: var(--spacing-s); /* Space between indicators and bars */
-width: 100%; /* Ensure the container spans the card width */
+align-items: flex-end; 
+gap: var(--spacing-s); 
+width: 100%; 
 }
 
 /* Left Indicators */
 .alternative-energy-card__chart-indicators {
 display: flex;
 flex-direction: column;
-justify-content: space-between; /* Evenly distribute indicators */
+justify-content: space-between; 
 font-family: var(--font-family-primary);
 font-size: 16px;
 font-weight: var(--font-weight-bold-700);
@@ -1171,7 +1170,7 @@ opacity: 1;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset ;
 }
 
-/* removes border om thermometer */
+/* Removed the border om thermometer */
 .rs-border{
   border: none !important;
 }
