@@ -57,6 +57,31 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+// Set the initial position of the indicator on page load
+document.addEventListener('DOMContentLoaded', () => {
+  const current = document.querySelector('.sc-current'); // Find the currently active menu item
+  if (current) {
+    const leftPosition = current.offsetLeft + current.offsetWidth / 2 - indicator.offsetWidth / 2; // Calculate its center
+    indicator.style.left = `${leftPosition}px`; // Position the indicator initially
+  }
+});
+
+/* Dropdown functionality */
+document.addEventListener("DOMContentLoaded", () => {
+  const toggleButton = document.querySelector(".dropdown__button");
+  const dropdownContent = document.querySelector(".dropdown__content");
+
+  toggleButton.addEventListener("click", () => {
+    toggleButton.classList.toggle("active");
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener("click", (event) => {
+    if (!event.target.closest(".energy-sources-card")) {
+      toggleButton.classList.remove("active");
+    }
+  });
+});
 
 /* change the graf */
 document.addEventListener("DOMContentLoaded", () => {
@@ -73,37 +98,6 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById(sectionId).classList.add("active");
     });
   });
-});
-
-// Set the initial position of the indicator on page load
-document.addEventListener('DOMContentLoaded', () => {
-  const current = document.querySelector('.sc-current'); // Find the currently active menu item
-  if (current) {
-    const leftPosition = current.offsetLeft + current.offsetWidth / 2 - indicator.offsetWidth / 2; // Calculate its center
-    indicator.style.left = `${leftPosition}px`; // Position the indicator initially
-  }
-});
-
-/* Dropdown functionality */
-document.addEventListener("DOMContentLoaded", () => {
-  const dropdownButton = document.querySelector(".dropdown__button"); // Select the dropdown button
-  const dropdownContent = document.querySelector(".dropdown__content"); // Select the dropdown content
-
-  if (dropdownButton && dropdownContent) {
-    dropdownButton.addEventListener("click", (event) => {
-      event.stopPropagation(); // Prevent the click from propagating to parent elements
-      dropdownContent.classList.toggle("active"); // Toggle the dropdown menu visibility
-    });
-
-    // Close the dropdown if a click happens outside it
-    document.addEventListener("click", (event) => {
-      if (!dropdownButton.contains(event.target) && !dropdownContent.contains(event.target)) {
-        dropdownContent.classList.remove("active"); // Close the dropdown
-      }
-    });
-  } else {
-    console.error("Dropdown button or content not found."); // Log an error if elements are missing
-  }
 });
 
 // Toggle edit mode for dragging cards
