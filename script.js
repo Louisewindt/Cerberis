@@ -40,22 +40,6 @@ menuItems.forEach((item) => {
     indicator.style.left = `${leftPosition}px`; // Move the indicator to the new position
   });
 });
-document.addEventListener("DOMContentLoaded", () => {
-  const toggleButton = document.querySelector(".dropdownSectionbutton");
-  const dropdownContent = document.querySelector(".dropdownSectioncontent");
-
-  toggleButton.addEventListener("click", () => {
-    toggleButton.classList.toggle("active");
-  });
-
-  // Close menu when clicking outside
-  document.addEventListener("click", (event) => {
-    if (!event.target.closest(".card--energy-sources")) {
-      toggleButton.classList.remove("active");
-    }
-  });
-});
-
 
 // Set the initial position of the indicator on page load
 document.addEventListener('DOMContentLoaded', () => {

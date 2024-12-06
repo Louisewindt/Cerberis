@@ -1,18 +1,26 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const toggleButton = document.querySelector(".dropdownSectionbutton");
-    const dropdownContent = document.querySelector(".dropdownSectioncontent");
+  const toggleButton = document.querySelector(".dropdownSection__button");
+  const dropdownContent = document.querySelector(".dropdownSection__content");
 
+  if (toggleButton && dropdownContent) {
     toggleButton.addEventListener("click", () => {
       toggleButton.classList.toggle("active");
+      dropdownContent.style.opacity = dropdownContent.style.opacity === "1" ? "0" : "1";
+      dropdownContent.style.visibility = dropdownContent.style.visibility === "visible" ? "hidden" : "visible";
     });
 
-    // Close menu when clicking outside
+    // Close dropdown when clicking outside
     document.addEventListener("click", (event) => {
-      if (!event.target.closest(".energy-sources-card")) {
+      if (!event.target.closest(".dropdownSection__button") && !event.target.closest(".dropdownSection__content")) {
         toggleButton.classList.remove("active");
+        dropdownContent.style.opacity = "0";
+        dropdownContent.style.visibility = "hidden";
       }
     });
-  });
+  } else {
+    console.error("Dropdown button or content is missing in the DOM.");
+  }
+});
 
 
 
