@@ -1,3 +1,5 @@
+
+
 // Initialize the temperature slider using the "roundSlider" library
 $("#card__temperatur-slider").roundSlider({
   radius: 100, // Sets the radius of the circular slider
