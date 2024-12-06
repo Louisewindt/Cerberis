@@ -67,6 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+
 // Toggle edit mode for dragging cards
 const editToggle = document.querySelector('#toggle-card-edit__checkbox'); // Edit mode toggle checkbox
 const cards = document.querySelectorAll('.card:not(.toggle-card-edit)'); // Select all cards except the edit toggle card

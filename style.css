@@ -263,258 +263,13 @@
   content: url("images/icon__edited-active.svg");
 }
 
-/* Energy Sources Card */
-.energy-sources-card {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-m);
-}
 
-/* Title */
-.energy-sources-card__title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: var(--spacing-s);
-  padding: var(--spacing-xs) var(--spacing-s);
-  font-weight: var(--font-weight-title-black-900);
-  color: var(--color-primary);
-  text-align: center;
-}
 
-.energy-sources-card__image{
-  height: 48px;
-  width: auto;
-}
-/* Icons + Text Section */
-.energy-sources-card__icons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: var(--spacing-xxl);
-}
 
-/* Each Icon + Text Wrapper */
-.energy-sources__left, .energy-sources__right {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--spacing-xs);
-  text-align: center;
-  color: var(--color-primary);
-}
 
-/* Circle Wrapper */
-.energy-sources-card__icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 64px;
-  height: 64px; 
-  border-radius: 50%;
-  background-color: var(--c);
-  box-shadow: var(--shadow-default);
-  transition: transform 0.3s, background-color 0.3s, border-color 0.3s;
-  cursor: pointer;
-}
 
-/* Active State */
-.energy-sources-card__icon--active {
-  background-color: var(--color-secondary);
-  border-color: var(--color-secondary);
-}
-.energy-sources-card__icon--inactive {
-  background-color: var(--color-inactive);
-  
-}
 
-/* Icons Inside Circles */
-.energy-sources__icon {
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
-}
 
-.energy-sources__icon--active{
-  color: var(--color-secondary);
-}
-
-/* Individual Icon + Text */
-
-/* Separator Line */
-.energy-sources-card__separator{
-  width: 100%;
-  height: 2px;
-  background-color: var(--color-primary);
-}
-
-.chart__title{
-  color: var(--color-primary);
-}
-/* "Dagens Data" Section */
-.energy-sources-card__data {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--spacing-xxs);
-  align-self: stretch;
-}
-
-/* Subtitle */
-.energy-sources-card__subtitle{
-  font-family: var(--font-family-primary);
-  font-weight: var(--font-weight-regular-400);
-  color: var(--color-primary);
-  text-align: center;
-}
-
-/* Data (Brugt + Sparet) */
-.energy-sources__data {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  gap: var(--spacing-m);
-}
-
-.energy-sources__data-item {
-  font-family: var(--font-family-primary);
-  font-weight: var(--font-weight-bold-700);
-  color: var(--color-primary);
-  text-align: center;
-}
-
-.dropdown__button {
-  background-color: transparent;
-  padding: 20px 20px;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  width: -webkit-fill-available;
-  border-radius: 4px;
-
-}
-/* Icon for dropdown (arrow down) */
-  .dropdown-button__icon {
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    border: solid #495675;
-    border-width: 2px 2px 0 0;
-    transform: rotate(135deg); /* Initial position (arrow down) */
-    transition: transform 0.3s ease;
-  }
-
-/* Dropdown Menu */
-.dropdown__content {
-  position: absolute;
-  top: 100%;
-  background-color: transparent;
-  border-radius: 4px;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
-  width: 100%;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-.dropdown__content.active {
-  opacity: 1;
-  visibility: visible;
-  position: relative; /* Change to relative when active */
-}
-
-/* Chart Wrapper */
-.chart__wrapper {
-  width: 80%;
-  margin: 0 auto;
-  text-align: center;
-}
-
-/* Chart Sections */
-.chart__section {
-  display: none;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.chart__section--active {
-  display: block;
-  opacity: 1;
-}
-
-/* Chart Container */
-.chart__container {
-  display: flex;
-  align-items: flex-end;
-  gap: var(--spacing-s);
-  width: 100%;
-}
-
-/* Chart Indicators */
-.chart__indicators {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  font-family: var(--font-family-primary);
-  font-size: 16px;
-  font-weight: var(--font-weight-bold-700);
-  color: var(--color-primary);
-  gap: 32px;
-}
-
-/* Chart Bars */
-.chart__bars {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  gap: 12px;
-  flex-grow: 1;
-  height: 240px;
-}
-
-.chart__bar {
-  width: 24px;
-  height: var(--bar-height);
-  background: linear-gradient(180deg, var(--color-secondary) 0%, var(--color-neutral) 100%);
-  border-radius: 20px;
-  border: 1px solid var(--color-neutral);
-  transition: height 0.3s ease;
-}
-
-/* Chart Labels */
-.chart__labels {
-  display: flex;
-  justify-content: space-between;
-  font-family: var(--font-family-primary);
-  font-size: 16px;
-  padding-left: var(--spacing-xl);
-  font-weight: var(--font-weight-bold-700);
-  margin-top: 8px;
-  color: var(--color-secondary);
-}
-
-/* Chart Navigation */
-.chart__nav-buttons {
-  margin-bottom: 20px;
-
-}
-
-.chart__nav-button {
-  background-color: transparent;
-  color: #C7DCF0;
-  border: none;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.chart__nav-button--active {
-  color: #FFCB3D;
-}
 
 /* themometer */
 
@@ -604,15 +359,10 @@
   align-self: stretch; 
   background: rgba(255, 255, 255, 0.1);
   border-radius: 16px;
+  text-decoration: none;
 }
-.rooms-card__room-link {
-  text-decoration: none; /* Remove underline from the link */
-  color: inherit; /* Inherit text color */
-  display: block; /* Make the link behave like a block element */
-  width: 100%; /* Ensure it spans the full width of the container */
-  margin: 0; /* Remove any default margins */
-  padding: 0; /* Remove any default padding */
-}
+
+
 .rooms-card {
   display: flex;
   flex-direction: column;
@@ -1078,6 +828,61 @@
 
 
 
+/*  */
+/* Toggle button */
+.dropdownSection__button {
+  background-color: transparent;
+  padding: 20px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: -webkit-fill-available;
+  border-radius: 4px;
+  
+}
+
+/* Icon for dropdown (arrow down) */
+.dropdownSection__icon {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: solid #495675;
+  border-width: 2px 2px 0 0;
+  transform: rotate(135deg); /* Initial position (arrow down) */
+  transition: transform 0.3s ease;
+}
+
+/* The menu (hidden by default) */
+.dropdownSection__content {
+  position: absolute;
+  top: 100%;
+  
+  border-radius: 4px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  width: -webkit-fill-available;
+}
+
+
+
+
+
+.dropdownSection__button.active .dropdownSection__icon {
+  transform: rotate(-45deg); /* Arrow pointing upwards */
+}
+
+/* Show the menu when active */
+.dropdownSection__button.active + .dropdownSection__content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+
 
 
 
@@ -1117,7 +922,7 @@
 .lock-icon {
   position: absolute;
   transition: opacity 0.3s ease; 
-  opacity: 0; / Default hidden /
+  opacity: 0; /* Default hidden */
   pointer-events: none;
 }
 
@@ -1140,3 +945,6 @@
 .room-Lockicon{
   opacity: 0;
 }
+/**/
+
+
