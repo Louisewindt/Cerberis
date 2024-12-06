@@ -820,7 +820,6 @@
 
 
 /* dropdown section*/
-
 /* Toggle button */
 .dropdownSection__button {
   background-color: transparent;
@@ -1094,14 +1093,553 @@ transition: opacity 0.3s ease;
 display: block;
 opacity: 1;
 }
+/* themometer */
+
+.temperature-card__value{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; 
+  position: relative; 
+}
+.temperature-card__title{
+  color: var(--color-primary);
+  display: flex;
+  justify-content: center;
+}
+.temperature-card{
+  padding-top: var(--spacing-m);
+  padding-bottom: var(--spacing-l);
+}
+
+#card__temperatur-slider {
+  width: 200px;
+  height: 200px;
+  }
+
+.card__temperatur-inside {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #201c29;
+  z-index: 3; 
+}
+
+
+/* change fonttype for temperatur in thermometer */
+.rs-tooltip.edit,.rs-tooltip .rs-input {
+  font-size: 64px; 
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-title-black-900); 
+  color: var(--color-primary);
+  padding-left: var(--spacing-s);
+  border: none;
+}
+.rs-tooltip.edit::after,.rs-tooltip .rs-input::after {
+  content: "°";
+  font-weight: var(--font-weight-title-black-900);
+  font-size: 32px;
+  position: relative;
+  bottom: var(--spacing-l);
+  }
+
+/* removes borderbox around temperatur in thermometer */
+#card__temperatur-slider:hover .rs-tooltip, .rs-tooltip:focus, .rs-tooltip-text:focus {
+  transform: scale(1.1);
+  transition: .1s;
+  border: none;
+}
+
+
+/* change color on dragable point in thermometer */
+#card__temperatur-slider .rs-handle {
+  background-color:white;
+  filter: drop-shadow(3px -1px 2px rgba(0, 0, 0, 0.27));
+}
+
+/* change color on active slider */
+.rs-range-color {
+  background-color:  #FFCB3D !important;
+  border: none !important;
+} 
+
+/* change color on background color on slider */
+.rs-path-color {
+  background-color: #495675 !important;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset ;
+}
+
+/* removes border om thermometer */
+.rs-border{
+  border: none !important;
+}
+
+.rooms-card__room {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  padding: var(--spacing-xs) var(--spacing-xs);
+  align-self: stretch; 
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  text-decoration: none;
+}
+
+
+.rooms-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center; 
+  gap: var(--spacing-m); 
+  padding: var(--spacing-m);
+  
+}
+
+/* Left Section: Icon + Name */
+.rooms-card__name-details {
+  display: flex;
+  align-items: center; 
+  gap: var(--spacing-xs); 
+  
+}
+
+/* Right Section: Temperature + Icons */
+.room-item__temperature-details {
+  display: flex;
+  align-items: center; 
+  gap: var(--spacing-xs); 
+}
+
+.rooms-card__name{
+  color: var(--color-primary);
+  font-weight: var(--font-weight-title-black-900);
+}
+
+.room-item__name {
+  color: var(--color-primary);
+  margin: 0;
+  font-weight: var(--font-weight-title-black-900);
+}
+
+.rooms-card__temperature {
+  color: var(--color-primary);
+  margin: 0;
+  font-weight: var(--font-weight-title-black-900);
+}
+
+.rooms-card-arrow__icon {
+  font-size: 18px;
+  color: var(--color-primary);
+}
+.rooms__addButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-s); 
+  height: 40px;
+  padding: var(--spacing-s) var(--spacing-xl);
+  border-radius: 100px;
+  background: var(--color-primary); 
+  box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.25); 
+  color: var(--color-neutral); 
+  font-family: var(--font-family-primary);
+  font-size: 16px;
+  font-weight: var(--font-weight-title-black-900);
+  line-height: normal;
+  border: none; 
+
+}
+.rooms-card__room-link {
+  text-decoration: none; 
+  color: inherit; 
+  display: block;
+  width: 100%; 
+  margin: 0; 
+  padding: 0;
+}
+
+/* Icon inside the button */
+.Rooms__addButtonIcon {
+  height: 16px;
+}
+
+/* Text inside the button */
+.rooms__addButton-text {
+  font-size: 16px; 
+  font-weight: var(--font-weight-title-black-900); 
+}
+
+.energy-chart-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing-m);
+  gap: var(--spacing-s);
+}
+
+.energy-chart-card__title {
+  font-family: var(--font-family-primary);
+  font-size: 24px;
+  font-weight: var(--font-weight-bold-700);
+  color: var(--color-primary);
+  text-align: center;
+  margin-bottom: var(--spacing-s);
+}
+
+/* Container for Indicators and Bars */
+.energy-chart-card__container {
+  display: flex;
+  align-items: flex-end; 
+  gap: var(--spacing-s); 
+  width: 100%; 
+}
+
+/* Left Indicators */
+.energy-chart-card__indicators {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Evenly distribute indicators */
+  font-family: var(--font-family-primary);
+  font-size: 16px;
+  font-weight: var(--font-weight-bold-700);
+  color: var(--color-primary);
+  gap: var(--spacing-xl);
+}
+
+/* Pillar Bars */
+.energy-chart-card__bars {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: var(--spacing-s);
+  flex-grow: 1; 
+  height: 240px; 
+}
+
+.energy-chart-card__bar {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 24px;
+  height: var(--bar-height);
+  background: linear-gradient(180deg, var(--color-secondary) 0%, var(--color-neutral) 100%);
+  border-radius: 20px;
+  border: 1px solid var(--color-neutral);
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.25);
+  transition: height 0.3s ease;
+}
+
+/* Bottom Labels */
+.energy-chart-card__labels {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: var(--spacing-xl);
+  gap: var(--spacing-xxs);
+  font-family: var(--font-family-primary);
+  font-size: 16px;
+  font-weight: var(--font-weight-bold-700);
+  color: var(--color-secondary);
+  margin-top: var(--spacing-xs);
+}
+
+.energy-chart__labels span {
+  text-align: center;
+  width: 32px;
+}
+/* Bottom Menu */
+/* Menu Item */
+.menu-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+}
+
+/* Menu Item Active State */
+.menu-item.active {
+  transform: translateY(-5px) scale(2);
+  border: 2px solid var(--color-primary);
+  border-radius: 50%; 
+}
+
+.menu-item.active .menu-icon {
+  filter: drop-shadow(0px 0px 8px var(--color-neutral));
+}
+
+/* Menu Icon */
+.bottom-menu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-xs);
+  background-color: var(--color-primary);
+  box-shadow: var(--menu-shadow);
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  z-index: 1000; /* High z-index to avoid conflicts */
+  
+}
+
+.menu-item {
+  flex: 1;
+  text-align: center;
+  cursor: pointer;
+  color: white;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.menu-item.sc-current {
+  transform: translateY(-20px) scale(1.4);
+  z-index: 3;
+  border: #495675;
+}
+.menu-item.sc-current::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px; 
+  height: 30px; 
+  border-radius: 100%;
+  border-color: var(--color-primary);
+  z-index: -1; 
+  box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.5); 
+}
+
+.menu-item.sc-current::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px; 
+  border: 12px solid var(--color-primary); 
+  border-radius: 50%;
+  z-index: -2; 
+}
+
+.bottom-menu__icon {
+  width: 40px; /* Reduced icon size */
+  height: 40px; /* Reduced icon size */
+}
+
+.menu-icon-small {
+  width: 75px; /* Adjusted for smaller icons */
+  height: auto;
+}
+.menu-indicator {
+  position: absolute;
+  bottom: calc(var(--menu-height) / 2 - var(--indicator-size) / 2);
+  width: var(--indicator-size);
+  height: var(--indicator-size);
+  background-color: #495675;
+  border-radius: 50%;
+  box-shadow: var(--menu-shadow);
+  z-index: 2;
+  transition: left 0.3s ease;
+}
+
+.content {
+  padding-bottom:150px;
+}
+
+
+
+.back-button{
+    background-color: transparent;
+    padding: var(--spacing-m);
+    border: none;
+}
+
+/* back arrow */
+.back-button-icon {
+  display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: solid #495675;
+    border-width: 4px 4px 0 0;
+    transform: rotate(-135deg);
+    transition: transform 0.3s ease;
+}
+
+
+
+/* Room site design*/
+
+
+/* header om roomsite */
+.header-room{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 18px 8px;
+  gap: var(--Spacing-XXS, 4px);
+  
+}
+
+
+.header-room-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--Spacing-XXS, 4px);
+  flex: 1 0 0;
+}
+
+
+.header-room-info__icon{
+  width: 50px;
+}
+
+/* Container for the header-room-edit toggle */
+.header-room-edit {
+  display: inline-block;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* Hides the checkbox */
+#header-room-edit__checkbox {
+  display: none;
+}
+
+/* Label serves as the clickable toggle area */
+.header-room-edit__label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* Base styling for icons */
+.header-room-edit__icon {
+  position: absolute;
+  width: 100%; 
+  height: auto;
+  transition: opacity 0.3s ease; 
+  opacity: 0;
+  pointer-events: none; 
+}
+
+/* Show inactive icon by default */
+.header-room-edit__icon--inactive {
+  opacity: 1;
+}
+
+/* Show active icon when checkbox is checked */
+#header-room-edit__checkbox:checked + .header-room-edit__label .header-room-edit__icon--inactive {
+  opacity: 0;
+}
+
+#header-room-edit__checkbox:checked + .header-room-edit__label .header-room-edit__icon--active {
+  opacity: 1;
+  width: 28px;
+}
 
 
 
 
+/* Edit Icon */
+.card__edit-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 24px;
+  height: 24px;
+  opacity: 0; /* Hidden by default */
+  pointer-events: none; /* Disable interaction when hidden */
+  transition: opacity 0.3s ease-in-out;
+}
 
+.card.shaking .card__edit-icon {
+  opacity: 1; /* Show icon when shaking */
+  pointer-events: auto; /* Enable interaction */
+}
 
+/* Dragging Visual Feedback */
+.card.dragging {
+  opacity: 0.5;
+  transform: scale(1.02); /* Slightly enlarge */
+  transition: transform 0.2s ease;
+}
+/* Shake animation */
+@keyframes shake {
+  0% { transform: rotate(-0.7deg); }
+  25% { transform: rotate(0.7deg); }
+  50% { transform: rotate(-0.7deg); }
+  75% { transform: rotate(0.7deg); }
+  100% { transform: rotate(0); }
+}
 
+.card.shaking {
+  animation: shake 0.3s infinite;
+}
 
+/* Container for the lock toggle */
+.temperature-card__lock {
+  padding-top: var(--spacing-m);
+  margin: auto;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Hides the checkbox */
+.lock-toggle {
+  display: none;
+}
+
+/* Label as the clickable toggle area */
+.lock-icon-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* Base styling for lock icons */
+.lock-icon {
+  position: absolute;
+  transition: opacity 0.3s ease; 
+  opacity: 0; /* Default hidden */
+  pointer-events: none;
+}
+
+/* Show open lock icon by default */
+.lock-icon--open {
+  opacity: 1;
+}
+
+/* Hide open lock and show closed lock when checkbox is checked */
+.lock-toggle:checked + .lock-icon-label .lock-icon--open {
+  opacity: 0;
+}
+
+.lock-toggle:checked + .lock-icon-label .lock-icon--closed {
+  opacity: 1;
+}
+
+/* add margin to bottom of */
+.temperature-card-room{
+  margin-bottom: 200px;
+}
 
 
 
