@@ -1063,18 +1063,21 @@ text-align: center;
 
 /* Navigation Buttons */
 .nav-buttons {
-margin-bottom: 20px;
-background-color: #495675;
+border-radius: 15px;
+background: var(--Colors-Text-Primary, #495675);
 text-align: center;
+padding: var(--Spacing-XXS, 4px) var(--Spacing-M, 16px);
+margin: 20px 0;
 }
 
 .nav-button {
-color: #C7DCF0;
-margin: 0 5px;
+color: var(--Color-Light-Blue, #C7DCF0);
 border: none;
 font-size: 16px;
 cursor: pointer;
 border-radius: 4px;
+font-family: Montserrat;
+font-size: 16px;
 background-color: transparent;
 }
 
