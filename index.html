@@ -38,6 +38,7 @@
     <h2 class="savings-card__text">i år</h2>
 </section>
 
+
 <!-- Toggles Section -->
  <section class="toggles">
  <section class="toggle toggle-card-home">
@@ -77,7 +78,162 @@
 </section>
 
 
+<!-- dropdown section -->
+<section class="card alternative-energy-card">
+  <!-- Title -->
+  <h2 class="alternative-energy-card__title">Varmekilder</h2>
 
+  <!-- Icons + Text -->
+  <section class="alternative-energy-card__icons">
+    <!-- First Icon -->
+    <section class="alternative-energy__left">
+      <section class="alternative-energy-card__icon alternative-energy-card__icon--active">
+        <img src="images/icon_wood-pellet-stove.png" alt="Træpillefyr Icon" class="alternative-energy-card__image">
+      </section>
+      <h3 class="alternative-energy-card__text">Træpillefyr</h3>
+    </section>
+
+    <!-- Second Icon -->
+    <section class="alternative-energy__right">
+      <section class="alternative-energy-card__icon alternative-energy-card__icon--inactive">
+        <img src="images/DistantHeating.svg" alt="Fjernvarme Icon" class="alternative-energy-card__image">
+      </section>
+      <h3 class="alternative-energy-card__text">Fjernvarme</h3>
+    </section>
+  </section>
+
+  <!-- Separator Line -->
+  <section class="alternative-energy-card__separator"></section>
+
+  <!-- "Dagens Data" Section -->
+  <section class="alternative-energy-card__data">
+    <h2 class="alternative-energy-card__subtitle">Dagens Data</h2>
+    <section class="alternative-energy__data">
+      <p class="alternative-energy__data-item">Brugt: 21 kWh</p>
+      <p class="alternative-energy__data-item">Sparet: 0,50 kr</p>
+    </section>
+  </section>
+
+  <button class="dropdownSection__button">
+    <span class="dropdownSection__icon"></span>
+  </button>
+
+  <section class="dropdownSection__content">
+    <!-- Container for Indicators and Bars -->
+    <section class="grafSection">
+
+      <section class="sections">
+        <!-- Weekly Data -->
+        <section id="section1" class="section active">
+          <h2 class="alternative-energy-card__chart-title">Ugens energiforbrug</h2>
+          <section class="alternative-energy-card__chart-container">
+            <!-- Left Indicators -->
+            <section class="alternative-energy-card__chart-indicators">
+              <span>50</span>
+              <span>40</span>
+              <span>30</span>
+              <span>20</span>
+              <span>10</span>
+            </section>
+
+            <!-- Bars -->
+            <section class="alternative-energy-card__chart-bars">
+              <section class="alternative-energy-card__chart-bar" style="--bar-height: 50%;"></section>
+              <section class="alternative-energy-card__chart-bar" style="--bar-height: 40%;"></section>
+              <section class="alternative-energy-card__chart-bar" style="--bar-height: 30%;"></section>
+              <section class="alternative-energy-card__chart-bar" style="--bar-height: 70%;"></section>
+              <section class="alternative-energy-card__chart-bar" style="--bar-height: 90%;"></section>
+              <section class="alternative-energy-card__chart-bar" style="--bar-height: 20%;"></section>
+              <section class="alternative-energy-card__chart-bar" style="--bar-height: 10%;"></section>
+            </section>
+          </section>
+
+          <!-- Bottom Labels -->
+          <section class="alternative-energy-card__chart-labels">
+            <span>Man</span>
+            <span>Tir</span>
+            <span>Ons</span>
+            <span>Tor</span>
+            <span>Fre</span>
+            <span>Lør</span>
+            <span>Søn</span>
+          </section>
+        </section>
+
+        <!-- Monthly Data -->
+        <section id="section2" class="section">
+          <h2 class="alternative-energy-card__chart-title">Månedens energiforbrug</h2>
+          <section class="alternative-energy-card__chart-container">
+            <section class="alternative-energy-card__chart-indicators">
+              <span>50</span>
+              <span>40</span>
+              <span>30</span>
+              <span>20</span>
+              <span>10</span>
+            </section>
+            <section class="alternative-energy-card__chart-bars">
+              <section class="alternative-energy-card__chart-bar" style="--bar-height: 50%;"></section>
+              <section class="alternative-energy-card__chart-bar" style="--bar-height: 40%;"></section>
+              <section class="alternative-energy-card__chart-bar" style="--bar-height: 30%;"></section>
+              <section class="alternative-energy-card__chart-bar" style="--bar-height: 70%;"></section>
+              <section class="alternative-energy-card__chart-bar" style="--bar-height: 90%;"></section>
+              <section class="alternative-energy-card__chart-bar" style="--bar-height: 20%;"></section>
+              <section class="alternative-energy-card__chart-bar" style="--bar-height: 10%;"></section>
+            </section>
+          </section>
+          <section class="alternative-energy-card__chart-labels">
+            <span>Man</span>
+            <span>Tir</span>
+            <span>Ons</span>
+            <span>Tor</span>
+            <span>Fre</span>
+            <span>Lør</span>
+            <span>Søn</span>
+          </section>
+        </section>
+
+        <!-- Yearly Data -->
+        <section id="section3" class="section">
+          <h2 class="alternative-energy-card__chart-title">Årets energiforbrug</h2>
+          <section class="alternative-energy-card__chart-container">
+            <section class="alternative-energy-card__chart-indicators">
+              <span>50</span>
+              <span>40</span>
+              <span>30</span>
+              <span>20</span>
+              <span>10</span>
+            </section>
+            <section class="alternative-energy-card__chart-bars">
+              <section class="alternative-energy-card__chart-bar" style="--bar-height: 50%;"></section>
+              <section class="alternative-energy-card__chart-bar" style="--bar-height: 40%;"></section>
+              <section class="alternative-energy-card__chart-bar" style="--bar-height: 30%;"></section>
+              <section class="alternative-energy-card__chart-bar" style="--bar-height: 70%;"></section>
+              <section class="alternative-energy-card__chart-bar" style="--bar-height: 90%;"></section>
+              <section class="alternative-energy-card__chart-bar" style="--bar-height: 20%;"></section>
+              <section class="alternative-energy-card__chart-bar" style="--bar-height: 10%;"></section>
+            </section>
+          </section>
+          <section class="alternative-energy-card__chart-labels">
+            <span>Man</span>
+            <span>Tir</span>
+            <span>Ons</span>
+            <span>Tor</span>
+            <span>Fre</span>
+            <span>Lør</span>
+            <span>Søn</span>
+          </section>
+        </section>
+      </section>
+
+      <!-- Navigation Buttons -->
+      <section class="nav-buttons">
+        <button class="nav-button" data-section="section1">Ugens</button>
+        <button class="nav-button" data-section="section2">Månedens</button>
+        <button class="nav-button" data-section="section3">Årets</button>
+      </section>
+    </section>
+  </section>
+</section>
 
 
 <!-- Temperature Control Section -->
