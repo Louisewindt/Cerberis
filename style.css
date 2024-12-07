@@ -58,10 +58,12 @@
     padding: 0;
     background: url('images/Background.png') no-repeat center center fixed;
     background-size: cover;
-    overflow-y: scroll; /* That scroll effect */
+    overflow-y: scroll;
   }
 
-  
+  /* ---------------------------------
+   Card Styles (Glassmorphism)
+---------------------------------- */
   .card{
     color: var(--glass-background);
     border-radius: var(--glass-border-radius);
@@ -70,6 +72,10 @@
     margin: var(--spacing-s);
     overflow: hidden;
   }
+
+/* ---------------------------------
+   Header Section
+---------------------------------- */
 
   .header {
     display: flex;
@@ -81,6 +87,10 @@
     color: var(--color-primary);
   }
   
+/* ---------------------------------
+   Weather Section
+---------------------------------- */
+
   .header__weather-temperature {
     color: var(--color-primary);
     font-weight: var(--font-weight-bold-700);
@@ -111,6 +121,11 @@
     width: 32px;
     height: 32px;
   }
+
+
+  /* ---------------------------------
+   Savings Card
+---------------------------------- */
 
   .savings-card {
     display: flex;
@@ -146,7 +161,9 @@
     
   }
   
-/* Toggle Button */
+/* ---------------------------------
+   Toggle Button
+---------------------------------- */
 
 .toggle{
   display: flex; 
@@ -176,7 +193,7 @@
   gap: var(--spacing-s);
 }
 
-/* Container til toggle */
+/* Container to the toggle */
 .toggle-card,
 .toggle-card-edit {
   display: inline-block;
@@ -185,13 +202,13 @@
   height: 36px;
 }
 
-/* Skjuler standard checkbox */
+/* removed the standard checkbox*/
 #toggle-card__checkbox,
 #toggle-card-edit__checkbox {
   display: none;
 }
 
-/* Label, som slider cirklen */
+/* Label, as a slider cirkle */
 .toggle-card__label,
 .toggle-card-edit__label {
   display: block;
@@ -205,7 +222,7 @@
   transition: background-color 0.3s ease;
 }
 
-/* Cirklen inde i slideren */
+/* Slider inside the circle */
 .toggle-card__circle,
 .toggle-card-edit__circle {
   position: absolute;
@@ -222,7 +239,7 @@
   justify-content: center;
 }
 
-/* Ikonet i cirklen */
+/* THe icons inside the circle */
 .toggle-card__icon,
 .toggle-card-edit__icon {
   width: 68%;
@@ -230,6 +247,7 @@
   margin-right: 2px;
 }
 
+/* The icons inside outside the circle when inaktive */
 .toggle-card__icon--inactive,
 .toggle-card-edit__icon--inactive {
   position: relative;
@@ -238,12 +256,13 @@
   margin: 5%;
 }
 
+/* Toggles individual classes for the right */
 .toggle-card-icon--right,
 .toggle-card-edit-icon--right {
   right: -25%;
 }
 
-/* Flytter cirklen, når den er aktiv */
+/* Moves the circle when its active */
 #toggle-card__checkbox:checked + .toggle-card__label .toggle-card__circle {
   transform: translateX(71px);
   background-color: #FFCB3D;
@@ -254,7 +273,7 @@
   background-color: #FFCB3D;
 }
 
-/* Ændrer ikonet baseret på tilstand */
+/* Changess the icons depending on the state */
 #toggle-card__checkbox:checked + .toggle-card__label .toggle-card__circle .toggle-card__icon {
   content: url("images/icon__out-active.svg");
 }
@@ -270,8 +289,13 @@
 
 
 
-/* themometer */
+/* ---------------------------------
+   Thermometer Component
+---------------------------------- */
 
+
+
+/* themometer Inside Value */
 .temperature-card__value{
   display: flex;
   justify-content: center;
@@ -279,30 +303,37 @@
   flex-direction: column; 
   position: relative; 
 }
+
+/* themometer Title on card */
 .temperature-card__title{
   color: var(--color-primary);
   display: flex;
   justify-content: center;
 }
+
+/* themometer Actual card placement */
 .temperature-card{
   padding-top: var(--spacing-m);
   padding-bottom: var(--spacing-l);
 }
 
+/* themometer The slider around the circle */
 #card__temperatur-slider {
   width: 200px;
   height: 200px;
   }
 
+
+  /* themometer Value text style */
 .card__temperatur-inside {
-  font-size: 2rem;
+  font-size: 32px;
   font-weight: bold;
   color: #201c29;
   z-index: 3; 
 }
 
 
-/* change fonttype for temperatur in thermometer */
+/* changes the fonttype for temperatur in thermometer */
 .rs-tooltip.edit,.rs-tooltip .rs-input {
   font-size: 64px; 
   font-family: var(--font-family-primary);
@@ -311,6 +342,8 @@
   padding-left: var(--spacing-s);
   border: none;
 }
+
+/* themometer Add a Degree Symbol (°) After Temperature Input for Styling */
 .rs-tooltip.edit::after,.rs-tooltip .rs-input::after {
   content: "°";
   font-weight: var(--font-weight-title-black-900);
@@ -333,7 +366,7 @@
   filter: drop-shadow(3px -1px 2px rgba(0, 0, 0, 0.27));
 }
 
-/* change color on active slider */
+/* changes color on active slider */
 .rs-range-color {
   background-color:  #FFCB3D !important;
   border: none !important;
@@ -350,6 +383,16 @@
   border: none !important;
 }
 
+
+
+
+/* ---------------------------------
+   Rooms Card Layout
+---------------------------------- */
+
+
+
+/* Room Card Layout and glassmorphism on individual rooms*/
 .rooms-card__room {
   display: flex;
   justify-content: space-between; 
@@ -360,9 +403,11 @@
   border-radius: 16px;
   text-decoration: none;
 }
+
+/* Rooms atag-links loosing their default styling*/
 .rooms-card__room-link {
   text-decoration: none; 
-  color: inherit; 
+  color: var(--color-primary); 
   display: block;
   width: 100%; 
   margin: 0; 
@@ -370,6 +415,7 @@
 }
 
 
+/* Rooms styling being placed like the other cards */
 .rooms-card {
   display: flex;
   flex-direction: column;
@@ -379,41 +425,47 @@
   padding: var(--spacing-m);
 }
 
-/* Left Section: Icon + Name */
+/* Left Section styling: Icon + Name */
 .rooms-card__name-details {
   display: flex;
   align-items: center; 
   gap: var(--spacing-xs); 
 }
 
-/* Right Section: Temperature + Icons */
+/* Right Section styling: Temperature + Icons */
 .room-item__temperature-details {
   display: flex;
   align-items: center; 
   gap: var(--spacing-xs); 
 }
 
+/* Rooms sectin Title */
 .rooms-card__name{
   color: var(--color-primary);
   font-weight: var(--font-weight-title-black-900);
 }
 
+/* Rooms individual rooms titles */
 .room-item__name {
   color: var(--color-primary);
   margin: 0;
   font-weight: var(--font-weight-title-black-900);
 }
 
+/* Rooms temperature styling */
 .rooms-card__temperature {
   color: var(--color-primary);
   margin: 0;
   font-weight: var(--font-weight-title-black-900);
 }
 
+/* Rooms Arrow icon */
 .rooms-card-arrow__icon {
   font-size: 18px;
   color: var(--color-primary);
 }
+
+/* Rooms Add Room Button */
 .rooms__addButton {
   display: flex;
   justify-content: center;
@@ -445,6 +497,13 @@
   font-weight: var(--font-weight-title-black-900); 
 }
 
+
+/* ---------------------------------
+   Energy Chart
+---------------------------------- */ 
+
+
+/* Energy Chart Card Structure and Spacing */
 .energy-chart-card {
   display: flex;
   flex-direction: column;
@@ -453,6 +512,7 @@
   gap: var(--spacing-s);
 }
 
+/* Energy Chart Title */
 .energy-chart-card__title {
   font-family: var(--font-family-primary);
   font-size: 24px;
@@ -470,7 +530,7 @@
   width: 100%; 
 }
 
-/* Left Indicators */
+/* Left Indicators Value */
 .energy-chart-card__indicators {
   display: flex;
   flex-direction: column;
@@ -492,6 +552,7 @@
   height: 240px; 
 }
 
+/* individual pillar bars */
 .energy-chart-card__bar {
   display: flex;
   justify-content: center;
@@ -505,7 +566,7 @@
   transition: height 0.3s ease;
 }
 
-/* Bottom Labels */
+/* Energy chart buttom labels */
 .energy-chart-card__labels {
   display: flex;
   justify-content: space-between;
@@ -523,7 +584,11 @@
   text-align: center;
   width: 32px;
 }
-/* Bottom Menu */
+
+/* ---------------------------------
+   Bottom Menu Navigation
+---------------------------------- */
+
 /* Menu Item */
 .menu-item {
   display: flex;
@@ -540,6 +605,7 @@
   border-radius: 50%; 
 }
 
+/* drop shadow */
 .menu-item.active .menu-icon {
   filter: drop-shadow(0px 0px 8px var(--color-neutral));
 }
@@ -628,6 +694,50 @@
 }
 
 
+/* ---------------------------------
+   SHaking animation for edit mode
+---------------------------------- */
+
+
+/* Edit Icon */
+.card__edit-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 24px;
+  height: 24px;
+  opacity: 0; 
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.card.shaking .card__edit-icon {
+  opacity: 1; 
+  pointer-events: auto; 
+}
+
+/* Dragging Visual Feedback (grayish box behind the section) */
+.card.dragging {
+  opacity: 0.5;
+  transform: scale(1.02); 
+  transition: transform 0.2s ease;
+}
+/* Shake animation */
+@keyframes shake {
+  0% { transform: rotate(-0.7deg); }
+  25% { transform: rotate(0.7deg); }
+  50% { transform: rotate(-0.7deg); }
+  75% { transform: rotate(0.7deg); }
+  100% { transform: rotate(0); }
+}
+
+.card.shaking {
+  animation: shake 0.3s infinite;
+}
+
+/* ---------------------------------
+   the other rooms
+---------------------------------- */
 
 
 .back-button{
@@ -649,7 +759,7 @@
 
 
 
-/* Room site design*/
+
 
 /* header om roomsite */
 .header-room{
@@ -726,44 +836,6 @@
   width: 28px;
 }
 
-
-
-
-/* Edit Icon */
-.card__edit-icon {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 24px;
-  height: 24px;
-  opacity: 0; 
-  pointer-events: none;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.card.shaking .card__edit-icon {
-  opacity: 1; 
-  pointer-events: auto; 
-}
-
-/* Dragging Visual Feedback */
-.card.dragging {
-  opacity: 0.5;
-  transform: scale(1.02); 
-  transition: transform 0.2s ease;
-}
-/* Shake animation */
-@keyframes shake {
-  0% { transform: rotate(-0.7deg); }
-  25% { transform: rotate(0.7deg); }
-  50% { transform: rotate(-0.7deg); }
-  75% { transform: rotate(0.7deg); }
-  100% { transform: rotate(0); }
-}
-
-.card.shaking {
-  animation: shake 0.3s infinite;
-}
 
 /* Container for the lock toggle */
 .temperature-card__lock {
