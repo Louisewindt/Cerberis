@@ -77,21 +77,21 @@ editToggle.addEventListener('change', () => {
   });
 });
 
-// Add dragging functionality to each card
+// Add dragging functionality to each card (pc/laptop for responsive)
 cards.forEach((card) => {
   // Start dragging with mouse
   card.addEventListener('mousedown', (event) => {
-    if (!editToggle.checked) return; // Dragging works only in edit mode
+    if (!editToggle.checked) return; // Dragging works ONLY in edit mode
     startDrag(event, card);
   });
 
-  // Start dragging with touch
+  // Start dragging with touch (phones)
   card.addEventListener('touchstart', (event) => {
-    if (!editToggle.checked) return; // Dragging works only in edit mode
+    if (!editToggle.checked) return; // Dragging works ONLY in edit mode
     startDrag(event, card);
   }, { passive: false });
 
-  // Move the dragged card
+  // Move the dragged card both mous and touch
   document.addEventListener('mousemove', (event) => moveDrag(event));
   document.addEventListener('touchmove', (event) => moveDrag(event), { passive: false });
 
@@ -103,11 +103,11 @@ cards.forEach((card) => {
 // Function to start dragging a card
 function startDrag(event, card) {
   draggedElement = card; // Set the card as the dragged element
-  card.classList.add('dragging'); // Add a visual effect for dragging
+  card.classList.add('dragging'); // Add the visual effect (styled in css) for dragging
 
   // Create a placeholder to maintain layout
-  placeholder = document.createElement('div');
-  placeholder.className = 'placeholder'; // Assign a specific class to the placeholder
+  placeholder = document.createElement('section');
+  placeholder.className = 'placeholder'; // Assign a classs to the placeholder
   placeholder.style.height = `${card.offsetHeight}px`; // Set the same height as the dragged card
   placeholder.style.backgroundColor = 'rgba(0, 0, 0, 0.1)'; // Make it slightly visible
   container.insertBefore(placeholder, card); // Insert the placeholder in the DOM
@@ -117,7 +117,7 @@ function startDrag(event, card) {
   offsetX = (event.touches ? event.touches[0].clientX : event.clientX) - rect.left;
   offsetY = (event.touches ? event.touches[0].clientY : event.clientY) - rect.top;
 
-  // Apply styles to make the card draggable
+  // Apply these styles to make the card draggable
   card.style.position = 'absolute';
   card.style.zIndex = 1000; // Bring the card to the top layer
 }
@@ -126,9 +126,9 @@ function startDrag(event, card) {
 function moveDrag(event) {
   if (!draggedElement) return; // Exit if no card is being dragged
 
-  event.preventDefault(); // Prevent scrolling on touch devices
+  event.preventDefault(); // Prevent scrolling on touch devices so it doesnt go all over the place
 
-  // Calculate the new position based on mouse or touch input
+  // Calculate the new position based where the on mouse or touch input is placed
   const clientX = event.touches ? event.touches[0].clientX : event.clientX;
   const clientY = event.touches ? event.touches[0].clientY : event.clientY;
 
@@ -147,7 +147,7 @@ function moveDrag(event) {
   }
 }
 
-// Function to stop dragging
+// Function so it stops dragging
 function stopDrag() {
   if (!draggedElement) return; // Exit if no card is being dragged
 
@@ -167,7 +167,7 @@ function stopDrag() {
   draggedElement = null; // Clear the reference to the dragged card
 }
 
-// Enable dragging with a double-tap on touch devices
+// Enable dragging with a double-tap on touch devices (easier for mobile users)
 let lastTap = 0; // Store the timestamp of the last tap
 
 cards.forEach((card) => {
