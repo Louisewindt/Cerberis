@@ -11,13 +11,13 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/roundSlider/1.3.2/roundslider.min.css" rel="stylesheet" />
 </head>
 <body>
-<section class="content">
+<main class="content">
 
-  <section class="header">
+  <header class="header">
     <!----------------------------------- Home Title ----------------------------------->
-    <header class="header__title">
+    <section class="header__title">
         <h1 class="header__title-text">Hjem</h1>
-    </header>
+    </section>
 
     <!----------------------------------- Weather Section ----------------------------------->
     <section class="header__weather">
@@ -26,56 +26,57 @@
           <img id="weather-icon" class="header__weather-icon" alt="Weather Icon" />
         </section>
     </section>
-</section>
+  </header>
 
 <!----------------------------------- Savings Section ----------------------------------->
 <section class="card savings-card">
   <section class="card__edit-icon">
-    <img src="images/icon__edited-inactive.svg" alt="Edit Icon" />
+      <img src="images/icon__edited-inactive.svg" alt="Edit Icon">
   </section>
-    <h2 class="savings-card__text">Du har sparet</h2>
-    <h2 class="savings-card__amount">32 kr</h2>
-    <h2 class="savings-card__text">i år</h2>
+  <h2 class="savings-card__text">Du har sparet</h2>
+  <h2 class="savings-card__amount">32 kr</h2>
+  <h2 class="savings-card__text">i år</h2>
 </section>
 
 
 <!----------------------------------- Toggles Section ----------------------------------->
- <section class="toggles">
- <section class="toggle toggle-card-home">
-  <h3 class="toggle-card-title">Tilstand (hjemme)</h3>
-<section class="toggle-card">
-  <section class="card__edit-icon">
-    <img src="images/icon__edited-inactive.svg" alt="Edit Icon" />
-  </section>
-  <input type="checkbox" id="toggle-card__checkbox" />
-  <label for="toggle-card__checkbox" class="toggle-card__label">
-      <img class="toggle-card__icon--inactive toggle-card-icon--left" src="images/icon__home-inactive.svg" alt="house Icon inactive">
-      <img class="toggle-card__icon--inactive toggle-card-icon--right " src="images/icon__out-inactive.svg" alt="door Icon inactive">
-    <span class="toggle-card__circle">
-      <img class="toggle-card__icon" src="images/icon__home-active.svg" alt="House Icon active" />
-    </span>
-  </label>
-</section>
-</section>
+<section class="toggles">
+  <article class="toggle toggle-card-home">
+      <h3 class="toggle-card-title">Tilstand (hjemme)</h3>
+      <section class="toggle-card">
+          <section class="card__edit-icon">
+              <img src="images/icon__edited-inactive.svg" alt="Edit Icon">
+          </section>
+          <input type="checkbox" id="toggle-card__checkbox">
+          <label for="toggle-card__checkbox" class="toggle-card__label">
+              <img class="toggle-card__icon--inactive toggle-card-icon--left" src="images/icon__home-inactive.svg" alt="house Icon inactive">
+              <img class="toggle-card__icon--inactive toggle-card-icon--right" src="images/icon__out-inactive.svg" alt="door Icon inactive">
+              <span class="toggle-card__circle">
+                  <img class="toggle-card__icon" src="images/icon__home-active.svg" alt="House Icon active">
+              </span>
+          </label>
+      </section>
+  </article>
 
 
-<section class="toggle">
-  <h3 class="toggle-card-title">Rediger(home)</h3>
-<section class="card toggle-card-edit">
-  <section class="card__edit-icon">
-    <img src="images/icon__edited-inactive.svg" alt="Edit Icon" />
-  </section>
-  <input type="checkbox" id="toggle-card-edit__checkbox" />
-  <label for="toggle-card-edit__checkbox" class="toggle-card__label toggle-card-edit__label" >
-      <img class="toggle-card__icon--inactive toggle-card-icon--left " src="images/icon__edit-inactive.svg" alt="house Icon inactive">
-      <img class="toggle-card__icon--inactive toggle-card-icon--right " src="images/icon__edited-inactive.svg" alt="door Icon inactive">
-    <span class="toggle-card__circle toggle-card-edit__circle">
-      <img class="toggle-card__icon toggle-card-edit__icon" src="images/icon__edit-active.svg" alt="House Icon active" />
-    </span>
-  </label>
+  <article class="toggle">
+    <h3 class="toggle-card-title">Rediger (home)</h3>
+    <section class="card toggle-card-edit">
+        <section class="card__edit-icon">
+            <img src="images/icon__edited-inactive.svg" alt="Edit Icon">
+        </section>
+        <input type="checkbox" id="toggle-card-edit__checkbox">
+        <label for="toggle-card-edit__checkbox" class="toggle-card__label toggle-card-edit__label">
+            <img class="toggle-card__icon--inactive toggle-card-icon--left" src="images/icon__edit-inactive.svg" alt="Edit Icon inactive">
+            <img class="toggle-card__icon--inactive toggle-card-icon--right" src="images/icon__edited-inactive.svg" alt="Edited Icon inactive">
+            <span class="toggle-card__circle toggle-card-edit__circle">
+                <img class="toggle-card__icon toggle-card-edit__icon" src="images/icon__edit-active.svg" alt="Edit Icon active">
+            </span>
+        </label>
+    </section>
+</article>
 </section>
-</section>
-</section>
+
 
 
 <!-----------------------------------DropDown Section ----------------------------------->
@@ -320,12 +321,13 @@
     <!-- Add Room Button -->
     <button class="rooms__addButton">
       <img src="images/Add_Rooms_Icon.svg" alt="plus icon for button" class="Rooms__addButtonIcon">
-      <h3 class="rooms__addButton-text">Tilføj rum</h3>
+      <span class="rooms__addButton-text">Tilføj rum</span>
     </button>
   <section class="card__edit-icon">
     <img src="images/icon__edited-inactive.svg" alt="Edit Icon" />
   </section>
 
+</section>
 <!----------------------------------- Statistic ----------------------------------->
 
 <section class="card energy-chart-card">
@@ -365,19 +367,19 @@
     <span>Søn</span>
   </section>
 </section>
-</section>
+</main>
 
 
 <!----------------------------------- Menu Bottom ----------------------------------->
 <nav class="bottom-menu">
   <section class="menu-item">
-    <img src="images/automating_icon.svg" alt="Icon 1" class="menu-icon menu-icon-small">
+      <img src="images/automating_icon.svg" alt="Icon 1" class="menu-icon menu-icon-small">
   </section>
   <section class="menu-item sc-current">
-    <img src="images/Home_icon.svg" alt="Icon 2" class="menu-icon">
+      <img src="images/Home_icon.svg" alt="Icon 2" class="menu-icon">
   </section>
   <section class="menu-item">
-    <img src="images/Statistics_icon.svg" alt="Icon 3" class="menu-icon">
+      <img src="images/Statistics_icon.svg" alt="Icon 3" class="menu-icon">
   </section>
   <section class="menu-indicator"></section>
 </nav>
