@@ -1,4 +1,4 @@
-// Define your Weather API key and URL
+// Define Weather API key and URL
 const apiKey = '26de0553398d4f2095c90949240512';
 const apiUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=auto:ip`;
 
